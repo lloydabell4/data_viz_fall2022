@@ -1,0 +1,49 @@
+---
+title: "Explore the Built-in Datasets"
+format: html
+editor: visual
+---
+
+# Part 1
+
+## Built-in datasets
+
+The R language comes with numerous built-in datasets which are normally used as demo data for playing with R functions. In this activity, you will access and briefly explore one of R's built-in dataset.
+
+## Viewing the datasets
+
+Call the `data` function from RStudio to view all built-in datasets.
+
+```{r}
+data()
+```
+
+## Selecting a dataset and viewing contents
+
+Find a dataset from that list and view the first few rows of the data (use the head() function)
+
+```{r}
+head(trees)
+```
+
+## Explore the dataset with the functions we learned in r-basics
+
+Use ncol(), summary(), and nrow(). Comment on what each function does.
+
+```{r}
+ncol(trees)
+summary(trees)
+nrow(trees)
+```
+
+# Part 2
+
+## Sketch your visualization based on your dataset of choice
+
+Take the dataset that you've chosen from the built-in choices and think about what might make an interesting story / exploration. Think about the grammar of graphics, particularly the way we've talked about mapping variables to aesthetics and the creation of geometric objects.
+
+What variables would you like to map?
+
+What aesthetics and geometric objects would best highlight the story you want to tell?
+
+Sketch out your visualization

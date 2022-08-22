@@ -1,0 +1,254 @@
+---
+title: 'Data Transformations'
+description: |
+  Doing More with Data
+author: 
+  - name: "Andrew Bell"
+date: 2022
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(ggrepel)
+library(DT)
+library(DataEditR)
+library(knitr)
+
+friends_info <- read_csv("data/friends_info.csv")
+friends_info_na <- read_csv("data/friends_info_nas.csv")
+friends_full <- read_csv("data/full_data.csv")
+```
+
+![](images/egor-myznik-jVWziyTMckI-unsplash.jpg)
+
+## Learning Objectives
+
+-   Become familiar with data transformation functions
+-   Understand how to deal with na's
+-   Learn how to use the package DataEditR to do simple edits to data
+
+## Data Transformations
+
+In the previous session, we explored the friends_info dataset. What analysis and/or insight was not possible with the ggplot() code that we learned? What core grammar of graphics building block did we not talk about?
+
+### dplyr basics (modified from r4ds 5.1.3)
+
+In this section we will learn 5 basic data manipulation / transformation functions.
+
+-   Pick observations by their values ([`filter()`](https://rdrr.io/r/stats/filter.html)).
+
+-   Reorder the rows (`arrange()`).
+
+-   Pick variables by their names (`select()`).
+
+-   Create new variables with functions of existing variables (`mutate()`).
+
+-   Collapse many values down to a single summary (`summarise()`).
+
+These can all be used in conjunction with `group_by()` which changes the scope of each function from operating on the entire dataset to operating on it group-by-group. 
+
+### Filtering
+
+What if we wanted to learn more about those those outliers that we identified in our Friend's episode scatterplot of imdb rating and views? We can use some basic data transformation functions to quickly filter our data to learn more about those specific episodes.
+
+```{r}
+first_viz <-  ggplot(data = friends_info, 
+                    mapping = aes(x = us_views_millions, y = imdb_rating))+
+  geom_point()+
+  geom_text_repel(data = filter(friends_info, us_views_millions > 40),
+                                         mapping = aes(label = title))+
+  labs(title = "Friends Episodes: IMDB Rating vs Viewers", 
+       x = "Views (millions)", 
+       y = "IMDB Rating")+
+  scale_y_continuous(breaks = seq(7,10.5, by = 0.5))
+  
+first_viz
+
+```
+
+What new function did we use in the code above to only show the episode title text on the plot? Filter!
+
+We can use filter to filter our tables
+
+```{r}
+filter_friends <- filter(friends_info, us_views_millions >40)
+
+?kable()
+
+kable(filter_friends, format = "html")
+#curious about kable()? Use the ?kable() to read the function's documentation
+```
+
+### Arrange rows with arrange()
+
+Suppose we'd like to just have a table of Friend's episodes that is sorted (excel term) / arranged by number of views. We do that with the arrange() function.
+
+```{r}
+arrange_friends <- arrange(friends_info, desc(us_views_millions))
+
+arrange_friends
+```
+
+There is also a package that allows for this type of sorting dynamically. The DT package creates the ability to add filtering, pagination, and sorting to HTML tables. Users can slice, scroll through, and arrange tables in ways that help them to make sense of your results.
+
+```{r}
+datatable(friends_info)
+```
+
+### Select columns
+
+Notice how both of the above tables have readability challenges due to be too 'wide' (too many columns). If the purpose of this table is just to show a subset of our variables - let's say - views, title, imdb rating, and season, then we can use the function `select()`.
+
+```{r}
+select_friends_info <- select(friends_info, title, us_views_millions, imdb_rating, season)
+
+datatable(select_friends_info)
+```
+
+The `select()` function works with a number of 'helper' functions:
+
+-   `starts_with("t")`: matches names that begin with "t".
+
+-   `ends_with("season")`: matches names that end with "season".
+
+-   `contains("view")`: matches names that contain "view".
+
+Try using these helper functions to Reminder that you can use the `?select` for more details about the `select()` function.
+
+```{r}
+
+```
+
+### Add new variables with **`mutate()`**
+
+`mutate()` is a great way to add new columns (to the end of your dataset) to your data.
+
+Let's say we want to make a new value that is a ratio of the views and imdb_rating. This ratio is a simple way of determining what is the 'best' Friend's episode.
+
+```{r}
+friends_ratio <- mutate(friends_info, 
+                        best = us_views_millions / imdb_rating)
+
+friends_ratio <- select(friends_ratio, best, title)
+
+datatable(friends_ratio)
+```
+
+### Grouped summaries with **`summarise()`**
+
+You may have noticed that there are some "double" episodes - episodes that have two rows. These were hour long episodes that are represented twice in our data. How could we collapse the data so that the the views and rating are averaged across the two parts of the double episodes?
+
+We can use the summarise() function in conjunction with group_by(). This changes the unit of analysis from the complete dataset to individual groups - in this case we want to group by 'title' and summarise the means of views and rating.
+
+```{r}
+title_friends <- group_by(friends_info, title)
+
+title_friends <- summarise(title_friends, 
+                           mean_views = mean(us_views_millions),
+                           mean_rating = mean(imdb_rating))
+
+arrange(title_friends, desc(mean_views))
+
+datatable(title_friends)
+```
+
+Suppose we want to better understand which Director had the highest mean_rating?
+
+```{r}
+
+```
+
+### Combining operations with a pipe
+
+Up to this point we've done each data maniupation step line by line. We can reduce the amount of code we have to write by using
+
+Suppose we want to look at the mean IMDB rating by season. What kind of data transformations and/or geom_layer might we need to run on the data?
+
+```{r}
+#option number 1 - generate the mean rating using dplyr functions and plot resulting values in bar plot
+IMDB_byseason <- friends_info%>%
+  group_by(season)%>%
+  summarise(mean_IMDB = mean(imdb_rating))%>%
+  arrange(desc(mean_IMDB))
+
+IMDB_byseason
+#option number 2 - generate a boxplot or violin plot to look at the distribution of the ratings by season without having to specific run any data transformations.
+
+friends_info$season <- as.factor(friends_info$season)
+ggplot(friends_info, aes(season, imdb_rating))+
+  #geom_boxplot()+
+  geom_violin()
+
+```
+
+## How to Deal with NA's (missing values)
+
+Missing values can cause all sorts of headaches because many aggregation functions will output a missing value if a missing value in part of the input. There are two primary ways of getting around this issue. For more details on how to deal with missing values check out the second edition of R4DS (<https://r4ds.hadley.nz/missing-values.html>).
+
+### The na.rm argument
+
+The na.rm argument (found within all aggregation functions) removes the missing values prior to computation (aggregation).
+
+```{r}
+friends_info_na%>%
+  group_by(directed_by)%>%
+  summarise(mean_views = mean(us_views_millions, na.rm = TRUE))
+
+#note Gail Mancuso 
+```
+
+### removing observations with missing values
+
+In the dataset below, there are many missing values in the emotion column. I want to create a count of the number of time the main characters uttered each emotion.
+
+```{r}
+#create list for filter
+target <- c ("Rachel Green", "Ross Geller", "Joey Tribbiani", "Chandler Bing", "Monica Geller", "Phoebe Buffay")
+
+
+#option 1
+friends_full%>%
+  filter(speaker%in%target)%>%
+  group_by(emotion, speaker)%>%
+  drop_na()%>%
+  summarise(n = n())%>%
+  arrange(emotion, n)
+
+#option 2
+friends_full%>%
+  filter(speaker%in%target, 
+         !is.na(emotion))%>%
+  group_by(emotion, speaker)%>%
+  summarise(n = n())%>%
+  arrange(emotion, n)
+```
+
+## Using DataEditR
+
+One of the major benefits of using R in your research workflow is that it creates a scriptable / reproducible process but for beginners to R it can be hard to break old habits. Many of us have relied on GUI based spreadsheet programs (Excel) for so long it can be hard to think in R. **DataEditR** is package that can help your transition to R.
+
+**DataEditR** is a package with a single function called data_edit() that creates an interactive data editor. Within this GUI editor you can:
+
+-   column selection using the `dataSelect` module
+-   row selection using the `dataFilter` module
+-   edit row or column names
+-   addition or removal of rows or columns
+-   manual column resizing
+-   drag to fill cells
+-   copy or paste data to and from external software
+-   custom column types to simplify user input (e.g. checkboxes and dropdown menus)
+-   support for readonly columns to prevent users from editing certain columns
+-   control over which column names can be edited
+-   stretch columns horizontally to fill available space
+-   programmatically add columns or rows to data prior to loading into the data editor
+
+You can call up the interface by using the data_edit() function.
+
+To create a new data file from an existing data frame use the following syntax:
+
+```{r eval=FALSE, include=TRUE}
+#friends_info_new <- data_edit(friends_info,save_as = "friends_info_new.csv")
+
+```

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="L. Andrew Bell, PhD">
+
+<title>setup</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="setup_files/libs/clipboard/clipboard.min.js"></script>
+<script src="setup_files/libs/quarto-html/quarto.js"></script>
+<script src="setup_files/libs/quarto-html/popper.min.js"></script>
+<script src="setup_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="setup_files/libs/quarto-html/anchor.min.js"></script>
+<link href="setup_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="setup_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="setup_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="setup_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="setup_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">setup</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>L. Andrew Bell, PhD </p>
+          </div>
+  </div>
+    
+    
+  </div>
+  
+
+</header>
+
+<p><img src="images/stephen-leonardi-8icXfoY5zlI-unsplash.jpg" class="img-fluid"></p>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
+<ul>
+<li>Identify the different ways you can use R</li>
+<li>Become familiar with RStudio Workbench: sessions vs projects</li>
+<li>Identify the resources used to create this workshop that will help you in your journey to learn R.</li>
+<li>If interested, learn how to install R and RStudio on your computer</li>
+</ul>
+</section>
+<section id="ways-to-use-r" class="level2">
+<h2 class="anchored" data-anchor-id="ways-to-use-r">Ways to use R</h2>
+<p>R is a programming language, but also a software environment (R Core Team, 2020). To start learning R, you first need to install some software programs (R and RStudio) on your computer or use a hosted R development platform that already has R and RStudio installed (RStudio Workbench). For this class, we will use RStudio Workbench because it reduces the challenges of local, individual installations of R and RStudio.</p>
+<p>We will talk about the advantage and disadvantages of using RStudio Workbench later in this workshop but know that the University is currently supporting and paying for RStudio Workbench.</p>
+</section>
+<section id="rstudio-workbench-and-r-projects" class="level2">
+<h2 class="anchored" data-anchor-id="rstudio-workbench-and-r-projects">RStudio Workbench and R Projects</h2>
+<p>Navigate to <a href="https://spiderweb.richmond.edu:8787">RStudio Workbench</a> and sign in with your University of Richmond netID and password.</p>
+<p>RStudio Workbench is organized around two ‘buckets’: a project bucket and a session bucket. Each time you start RStudio, you create a new session. A project contains folders and files associated with that project. We will be cloning a project I’ve created and shared via Github.</p>
+<ul>
+<li><p>Click New Project from the Home Screen or, if already in a session, click File -&gt; New Project</p></li>
+<li><p>Click Version Control</p></li>
+<li><p>Click Git</p></li>
+</ul>
+<p>Enter the information about my github repository into the boxes as seen below:</p>
+<ul>
+<li><p>Repository URL: https://github.com/lloydabell4/data_analysis-visualization_fall2022</p></li>
+<li><p>Project Directory Name: <strong>data_analysis-visualization_fall2022</strong></p></li>
+</ul>
+</section>
+<section id="resources" class="level2">
+<h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<p>This workshop relies heavily on two primary sources.</p>
+<ul>
+<li><em>R for Data Science</em> by Hadley Wickham and Garrett Frolemund which can be found at <a href="https://r4ds.had.co.nz" class="uri">https://r4ds.had.co.nz</a> (for free!)</li>
+<li><em>Data Visualization: A Practical Introduction</em> by Kieran Healy which can be found at <a href="https://socviz.co" class="uri">https://socviz.co</a> (also for free! - see Menu button on top left)</li>
+<li><a href="https://rstudio.cloud/learn/primers">RStudio.Cloud primers</a> - These are fantastic, easy to use tutorials to supplement this workshop instruction.</li>
+</ul>
+<p>In addition to those books, if you are completely new to programming or simply want a good resource for learning R, I also highly recommend Garrett Frolemund’s book <em>Hands-On Programming with R</em> <a href="https://learning.oreilly.com/library/view/hands-on-programming-with/9781449359089/">found here via the UR library</a></p>
+<p>You might also find the cheatsheet’s that RStudio provides to super helpful as you start to create your visualizations <a href="https://rstudio.cloud/learn/cheat-sheets">found here</a></p>
+<section id="optional" class="level3">
+<h3 class="anchored" data-anchor-id="optional">Optional:</h3>
+<p><strong>Downloading and Installing R</strong></p>
+<ol type="1">
+<li>Go to <a href="https://cloud.r-project.org/" class="uri">https://cloud.r-project.org/</a></li>
+<li>Click on the link for the download you want, depending on whether you have a Mac or a PC that runs Windows.</li>
+<li>If you have never installed R before, click the base link. If you have… you probably know better than I do what you should do. On Windows the link is right at the top of the page, but if you’re on a Mac you might have to scroll down a bit.</li>
+<li>Download the version of R you want (when in doubt, go with the latest version- at the time of this publication it is version 4.1.1).</li>
+<li>If you have Windows, you’ll be asked a bunch of questions about things like where you want the file to be located, the components to be installed, the startup options… just go with the defaults. Mac users won’t have to worry about it (you’ll just need to move the file from your Downloads folder into Applications).</li>
+<li>Open up the file and check it out! If all is well, you should see something like this (image below):</li>
+</ol>
+<center>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/R-gui-mac.png" class="class figure-img" style="width:50.0%;height:50.0%"></p>
+<p></p><figcaption class="figure-caption">screenshot of R console on Mac</figcaption><p></p>
+</figure>
+</div>
+</center>
+<p>This is R’s graphical user interface, but don’t worry about it because you’ll typically only use another tool for coding in R: RStudio.</p>
+<p><strong>Downloading and Installing RStudio</strong> RStudio is the integrated development environment (or IDE) that we’ll be using to write R code. While an IDE is not necessary for coding, it’s nice because you’ll generally have some built-in tools that will help you along the way. They contain a text editor, debugging tools, and other neat stuff.</p>
+<ol type="1">
+<li><p>Go to the RStudio website.</p>
+<ul>
+<li>Note: Some of you, especially if you’ve worked with Python at all, might have Anaconda installed and have seen that you can install R and RStudio there. I don’t recommend it… mostly because I couldn’t get it to work. I’m going to stick to the instructions from now on.</li>
+</ul></li>
+<li><p>Choose the version you want (might I suggest going with one of the FREE versions?). I went with the desktop version, but there’s a server version as well.</p></li>
+<li><p>Hit that blue download button!</p></li>
+<li><p>The website will recommend a download for your system. That’s the one you should probably just go with, but I would just double check that your system meets the requirements.</p></li>
+<li><p>There might be some set-up to do.</p>
+<ul>
+<li>If you’re using Windows:</li>
+<li>You should see another Setup wizard. Hit “next.”</li>
+<li>Like with R you’ll have to select destination and start menu folders for RStudio. Put it wherever, but I’d recommend putting it in the same location as R so that RStudio will be able to easily “find” R on your machine. If you just go with the defaults you should be good.</li>
+</ul></li>
+<li><p>Once RStudio is finished installing, find it and open it- you’ll need it to install some packages.</p></li>
+</ol>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

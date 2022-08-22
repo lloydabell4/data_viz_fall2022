@@ -1,0 +1,124 @@
+---
+title: "What is data?"
+author: "L. Andrew Bell, PhD"
+format: revealjs
+editor: visual
+---
+
+## Essential Questions
+
+-   What is Data?
+
+-   How do you categorize data?
+
+-   What can you do with data?
+
+## Data: /**ˈ**dadə,**ˈ**dādə/ *noun*
+
+-   facts and statistics collected together for reference or analysis
+
+-   information in digital form that can be transmitted or processes
+
+-   information output by a sensing device or organ that includes both useful and irrelevant or redundant information and must be processed to be meaningful
+
+## Data is Everywhere
+
+Data are numbers
+
+![](images/IMG_9651.jpeg){fig-align="center"}
+
+## Data is Everywhere
+
+Exercise: What data do you "see"?
+
+![](images/view.jpg){fig-align="center"}
+
+## Data is Everywhere
+
+Exercise: Write out a basic data-set that is related to your everyday life experience.
+
+## Can we ***categorize*** data?
+
+## Data Types
+
+![](images/datatypes.png){fig-align="center"}
+
+## Data Type by Category
+
+![](images/datatypebycategory.png){fig-align="center"}
+
+## Categorical Data
+
+-   Categorical data represents characteristics. Therefore it can represent things like a person's gender, language etc. Categorical data can also take on numerical values (Example: 1 for female and 0 for male). Note that those numbers don't have mathematical meaning.
+    -   **Nominal:** Nominal values represent discrete units and are used to label variables, that have no quantitative value. Just think of them as "labels". Note that nominal data that has no order. Therefore if you would change the order of its values, the meaning would not change.
+
+    -   **Ordinal:** Ordinal values represent discrete and ordered units. It is therefore nearly the same as nominal data, except that it's ordering matters.
+
+## Numerical Data
+
+-   **Discrete:** We speak of discrete data if its values are distinct and separate. In other words: We speak of discrete data if the data can only take on certain values. This type of data can't be measured but it can be counted. It basically represents information that can be categorized into a classification. An example is the number of heads in 100 coin flips.
+-   **Continuous**: Continuous Data represents measurements and therefore their values can't be counted but they can be measured. An example would be the height of a person, which you can describe by using intervals on the real number line.
+
+## Categorize these datasets
+
+-   Political party affiliation
+
+-   Number of siblings
+
+-   Frequency of action potentials
+
+-   Top 10 Taylor Swift songs
+
+-   Your dataset
+
+## What can we do with data? ![](images/mars_crash.png)
+
+## The Evolution of the "Traditional" Family (text)
+
+The 'traditional' family has evolved over the last 200 years. The traditional family in 1800 was defined as a ***corporate family*** (family farm where the whole family works there) whereas today the the most typical family consist of ***dual earner families*****.**
+
+## The Evolution of the "Traditional" Family (visualization)![](images/traditional_family.jpeg){width="1663"}
+
+## How do we tell stories with data?
+
+![](images/lifecycle.png){fig-align="center"}
+
+## 5 Minute Break
+
+Next - Objectives and Outline
+
+## Objectives
+
+*Understand how to craft and communicate an effective argument with data visualizations*
+
+*Develop computational skills to conduct reproducible, ethical, and scriptable data analysis and visualization*
+
+**Be comfortable digging into any dataset**
+
+## Weekly Outline
+
+![](images/weekly_outline.png){fig-align="center"}
+
+## Opportunities to Demonstrate How Much You've Learned
+
+![](images/assessments.png){fig-align="center"}
+
+## Course Portfolio
+
+![](images/portfolio.png){fig-align="center"}
+
+## Course Blackboard Site
+
+![](images/blackboard.png){fig-align="center"}
+
+## Policies
+
+**Effort**
+
+***Care for yourself and each other***
+
+**Persistence**
+
+## 5 Minute Break
+
+Next - Setup

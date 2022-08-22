@@ -1,0 +1,21 @@
+---
+title: "learning_activity_ggplotfriends"
+format: pdf
+editor: visual
+---
+
+## Learning Activity: Creating a visualization
+
+Let's continue our exploration of this Friends data. I want you to now create your own visualization that explores the how the show Friends' popularity changed over time.
+
+Instructions:
+
+-   1 Create a new object that contains your visualization (use the friends_info dataset)
+-   2 Use a geom to create a scatterplot that maps time to the x axis and USA views to the y axis
+-   3 Make sure your visualization has a proper title and axis labels
+
+```{r Exercise: Creating a Visualization}
+#your code here
+```
+
+## 
