@@ -50,9 +50,12 @@ Exercise: Write out a basic data-set that is related to your everyday life exper
 ## Categorical Data
 
 -   Categorical data represents characteristics. Therefore it can represent things like a person's gender, language etc. Categorical data can also take on numerical values (Example: 1 for female and 0 for male). Note that those numbers don't have mathematical meaning.
-    -   **Nominal:** Nominal values represent discrete units and are used to label variables, that have no quantitative value. Just think of them as "labels". Note that nominal data that has no order. Therefore if you would change the order of its values, the meaning would not change.
 
-    -   **Ordinal:** Ordinal values represent discrete and ordered units. It is therefore nearly the same as nominal data, except that it's ordering matters.
+## Categorical Data (Types)
+
+-   **Nominal:** Nominal values represent discrete units and are used to label variables, that have no quantitative value. Just think of them as "labels". Note that nominal data that has no order. Therefore if you would change the order of its values, the meaning would not change.
+
+-   **Ordinal:** Ordinal values represent discrete and ordered units. It is therefore nearly the same as nominal data, except that it's ordering matters.
 
 ## Numerical Data
 
@@ -77,7 +80,9 @@ Exercise: Write out a basic data-set that is related to your everyday life exper
 
 The 'traditional' family has evolved over the last 200 years. The traditional family in 1800 was defined as a ***corporate family*** (family farm where the whole family works there) whereas today the the most typical family consist of ***dual earner families*****.**
 
-## The Evolution of the "Traditional" Family (visualization)![](images/traditional_family.jpeg){width="1663"}
+## The Evolution of the "Traditional" Family (visualization)
+
+![](images/traditional_family.jpeg){fig-align="center" width="1200"}
 
 ## How do we tell stories with data?
 
@@ -93,7 +98,7 @@ Next - Objectives and Outline
 
 *Develop computational skills to conduct reproducible, ethical, and scriptable data analysis and visualization*
 
-**Be comfortable digging into any dataset**
+**Be comfortable digging into any dataset - data_examples.pdf**
 
 ## Weekly Outline
 
@@ -109,7 +114,7 @@ Next - Objectives and Outline
 
 ## Course Blackboard Site
 
-![](images/blackboard.png){fig-align="center"}
+![](images/blackboard.png){fig-align="center" width="1200"}
 
 ## Policies
 

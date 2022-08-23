@@ -34,13 +34,13 @@ RStudio Workbench is organized around two 'buckets': a project bucket and a sess
 
 Enter the information about my github repository into the boxes as seen below:
 
--   Repository URL: https://github.com/lloydabell4/data_analysis-visualization_fall2022
+-   Repository URL: https://github.com/lloydabell4/data_viz_fall2022
 
--   Project Directory Name: **data_analysis-visualization_fall2022**
+-   Project Directory Name: **data_viz_fall2022**
 
 ## Resources
 
-This workshop relies heavily on two primary sources.
+This course relies heavily on two primary sources.
 
 -   *R for Data Science* by Hadley Wickham and Garrett Frolemund which can be found at <https://r4ds.had.co.nz> (for free!)
 -   *Data Visualization: A Practical Introduction* by Kieran Healy which can be found at <https://socviz.co> (also for free! - see Menu button on top left)
