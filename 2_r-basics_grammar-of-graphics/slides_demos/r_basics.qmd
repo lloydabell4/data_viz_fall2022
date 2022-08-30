@@ -344,7 +344,27 @@ Run summary statistics on your data frame? Is there anything interesting from th
 
 ```
 
-## Exercise: Your first code with COWSAY
+## **Exercise: Explore the datasets built into R**
+
+There are a number of datasets built into R. They can explored by calling the data() function.
+
+```{r}
+#type the code required to call the data function
+```
+
+Explore 3 individual datasets by calling them
+
+```{r}
+
+```
+
+Assign the dataset that you are most interested in to a new object called best_data. Explore best_data using the summary and structure functions we talked about above. What does the head() function do?
+
+```{r}
+
+```
+
+## After Class Learning Activity: Your first code with COWSAY
 
 For your next grant, you'd really like to include a figure what has a cow asking (politely) for a strong score. Let's figure out how to do that!
 
