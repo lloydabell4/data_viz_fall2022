@@ -129,11 +129,11 @@ args(round)
 
 ```
 
-**Contentual Help**
+**Contextual Help**
 
 Here is one last bonus we will mention about RStudio. It's difficult to remember all of the arguments and definitions associated with a given function. When you start typing the name of a function and hit the `Tab` key, RStudio will display functions and associated help:
 
-![Contentual Help 1](images/studio_contexthelp1.png){.class width="75%" height="75%"}
+![Contextual Help 1](images/studio_contexthelp1.png){.class width="75%" height="75%"}
 
 Once you type a function, hitting the `Tab` inside the parentheses will show you the function's arguments and provide additional help for each of these arguments.
 
@@ -166,7 +166,7 @@ Nifty keyboard shortcut alert! To make a \<- : hold `Alt` (or `option` on a Mac)
 ```{r}
 # this line creates the object 'a' and assigns it the value '1'
 
-a <- 1
+
 ```
 
 Next, run this line of code in your script. You can run a line of code by hitting the Run button that is just above the first line of your script in the header of the Source pane or you can use the appropriate shortcut:
@@ -245,18 +245,18 @@ One of the most common ways to create a vector is to use the `c()` function - th
 
 ```{r}
 ## Create a list of your favorite foods
-fav_foods <- c("Tacos","Burritos","Hamburgers")
+
 
 ## Check the mode, length, and structure of 'fav_foods'
 
 # Mode
-mode(fav_foods)
+
 
 # Length
-length(fav_foods)
+
 
 # Structure
-str(fav_foods)
+
 ```
 
 ### Data frame
@@ -311,7 +311,7 @@ Using only two functions, we can learn a lot about a data frame including some s
 ```{r}
 ## get summary statistics on a data frame
 
-summary(friends)
+
 ```
 
 Our data frame had 8 variables, so we get 8 fields that summarize data. The `imdb_rating`, `us_views_millions`, `episode`, and `season` variables are numerical data and so you get summary statistics on the min/max values, as well as mean, median, and interquartile ranges. Variables like `air_date` and `title` are treated as categorical data.
@@ -321,7 +321,7 @@ Before we analyze the data further, we also need to know a little more about the
 ```{r}
 ## get the structure of a data frame
 
-str(friends)
+
 ```
 
 Ok, that's a lot up unpack! Some things to notice.
