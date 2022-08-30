@@ -133,7 +133,7 @@ args(round)
 
 Here is one last bonus we will mention about RStudio. It's difficult to remember all of the arguments and definitions associated with a given function. When you start typing the name of a function and hit the `Tab` key, RStudio will display functions and associated help:
 
-![Contentual Help 1](Images/studio_contexthelp1.png){.class width="75%" height="75%"}
+![Contentual Help 1](images/studio_contexthelp1.png){.class width="75%" height="75%"}
 
 Once you type a function, hitting the `Tab` inside the parentheses will show you the function's arguments and provide additional help for each of these arguments.
 
@@ -297,13 +297,12 @@ Now, let's read the file `friends_info.csv` which is located in `/Cloud/project/
 
 ```{r}
 ## read in a CSV file and save it as 'friends'
-
-friends <- read.csv("~data_analysis-visualization_fall2022/2_why-look-at-data/data/friends_info.csv")
+friends <- read_csv("friends_info.csv")
 ```
 
 One of the first things you should notice is that in the Environment window, you have the newly created `friends` object. listed with 236 obs. (observations/rows) of 29 variables (columns). Double-clicking on the name of the object will open a view of the data in a new tab.
 
-![View our new data frame](Images/dataframe.png){.class width="75%" height="75%"}
+![View our new data frame](images/dataframe.png){.class width="75%" height="75%"}
 
 **Summarizing and determining the structure of a data frame.**
 
