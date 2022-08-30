@@ -29,7 +29,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Load [RStudio Workbench](http://spiderweb.richmond.edu:8787) in your favorite browser, open the Transition to R project, and you should see a window similar to that shown below.
 
-![RStudio user-interface. Note: the positioning of some windows may differ from that shown here and can be changed to suit the user.](Images/rstudioIDE.png){#id .class width="50%" height="50%"}
+![RStudio user-interface. Note: the positioning of some windows may differ from that shown here and can be changed to suit the user.](images/rstudioIDE.png){#id .class width="50%" height="50%"}
 
 The following windows will appear as part of the RStudio user-interface:
 
@@ -47,7 +47,7 @@ You can either type code directly into the Console window, or you can type it in
 
 and the RStudio window changes to:
 
-![Typical 4 pane layout of RStudio IDE](Images/rstudio_session_4pane_layout.png){.class width="50%" height="50%"}
+![Typical 4 pane layout of RStudio IDE](images/rstudio_session_4pane_layout.png){.class width="50%" height="50%"}
 
 For a comprehensive one-page guide to the RStudio IDE, check out this ['cheatsheet'](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf)
 
@@ -329,7 +329,9 @@ Ok, that's a lot up unpack! Some things to notice.
 -   the object type data.frame is displayed in the first row along with its dimensions, in this case 236 observations (rows) and 8 variables (columns)
 -   Each variable (column) has a name (e.g. title). This is followed by the object mode (e.g. factor, int, num, etc.). Notice that before each variable name there is a \$ - this will be important later.
 
-**Exercise: Import explore new data set** Import the friends_emotions.csv found in the /Data folder and assign the data frame to a new object "emotions"
+## **Exercise: Import explore new data set** 
+
+Import the friends_emotions.csv found in the slides_demo folder and assign the data frame to a new object "emotions"
 
 Explore the structure of emotions. How many variables and observations does your data frame have? What mode are your variables?
 
@@ -342,9 +344,9 @@ Run summary statistics on your data frame? Is there anything interesting from th
 
 ```
 
-## Your first code with COWSAY
+## Exercise: Your first code with COWSAY
 
-For your next grant, you'd really like to include a figure what has a cow asking (politely) for a strong score. Let's fsigure out how to do that!
+For your next grant, you'd really like to include a figure what has a cow asking (politely) for a strong score. Let's figure out how to do that!
 
 You are in luck, someone kind soul in this world created a package called "cowsay" that draws animals with dialogs boxes that you can populate!
 
