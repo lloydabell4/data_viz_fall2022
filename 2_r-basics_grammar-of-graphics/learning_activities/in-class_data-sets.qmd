@@ -20,7 +20,7 @@ Call the `data` function from RStudio to view all built-in datasets.
 
 ## Selecting a dataset and viewing contents
 
-Find a dataset from that list and view the first few rows of the data (use the head() function)
+Find 3 datasets from that list and view the first few rows of the data (use the head() function)
 
 ```{r}
 
@@ -28,7 +28,7 @@ Find a dataset from that list and view the first few rows of the data (use the h
 
 ## Explore the dataset with the functions we learned in r-basics
 
-Use ncol(), summary(), and nrow(). Comment on what each function does.
+Select the dataset you are most interested in and assign the object to a new object called "fav_data". Use the exploratory functions we've learned in class to further explore your dataset. Comment on what each function does.
 
 ```{r}
 

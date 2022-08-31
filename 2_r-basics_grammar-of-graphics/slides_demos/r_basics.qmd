@@ -5,6 +5,7 @@ editor: visual
 ---
 
 ```{r setup, include=FALSE}
+library(readr)
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
@@ -329,7 +330,7 @@ Ok, that's a lot up unpack! Some things to notice.
 -   the object type data.frame is displayed in the first row along with its dimensions, in this case 236 observations (rows) and 8 variables (columns)
 -   Each variable (column) has a name (e.g. title). This is followed by the object mode (e.g. factor, int, num, etc.). Notice that before each variable name there is a \$ - this will be important later.
 
-## **Exercise: Import explore new data set** 
+## **Exercise: Import / explore new data set**
 
 Import the friends_emotions.csv found in the slides_demo folder and assign the data frame to a new object "emotions"
 
@@ -341,26 +342,6 @@ Run summary statistics on your data frame? Is there anything interesting from th
 
 
 
-
-```
-
-## **Exercise: Explore the datasets built into R**
-
-There are a number of datasets built into R. They can explored by calling the data() function.
-
-```{r}
-#type the code required to call the data function
-```
-
-Explore 3 individual datasets by calling them
-
-```{r}
-
-```
-
-Assign the dataset that you are most interested in to a new object called best_data. Explore best_data using the summary and structure functions we talked about above. What does the head() function do?
-
-```{r}
 
 ```
 

@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>r_basics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="r_basics_files/libs/clipboard/clipboard.min.js"></script>
+<script src="r_basics_files/libs/quarto-html/quarto.js"></script>
+<script src="r_basics_files/libs/quarto-html/popper.min.js"></script>
+<script src="r_basics_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="r_basics_files/libs/quarto-html/anchor.min.js"></script>
+<link href="r_basics_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="r_basics_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="r_basics_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="r_basics_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="r_basics_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">r_basics</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<p><img src="images/priscilla-du-preez-s1vlYdwX4Zg-unsplash.jpg" class="img-fluid"></p>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
+<ul>
+<li><p>Become familiar with the RStudio environment</p></li>
+<li><p>Identify the key elements of the R programming language</p>
+<ul>
+<li>Functions</li>
+<li>Packages</li>
+<li>Objects</li>
+<li>Operators</li>
+<li>Vectors</li>
+<li>Data frames</li>
+</ul></li>
+<li><p>Write your first R code</p></li>
+</ul>
+</section>
+<section id="the-rstudio-environment" class="level2">
+<h2 class="anchored" data-anchor-id="the-rstudio-environment">The RStudio Environment</h2>
+<p>Load <a href="http://spiderweb.richmond.edu:8787">RStudio Workbench</a> in your favorite browser, open the Transition to R project, and you should see a window similar to that shown below.</p>
+<div id="id" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/rstudioIDE.png" class="class figure-img" style="width:50.0%;height:50.0%"></p>
+<p></p><figcaption class="figure-caption">RStudio user-interface. Note: the positioning of some windows may differ from that shown here and can be changed to suit the user.</figcaption><p></p>
+</figure>
+</div>
+<p>The following windows will appear as part of the RStudio user-interface:</p>
+<ul>
+<li><p><strong>Console window</strong> - The window on the right in Figure 1 is the standard R console window (the only one you would see if you used only R and not R via RStudio. This is the window where you type in commands and the results are returned.</p></li>
+<li><p><strong>Workspace / History</strong> - This window (left side in Figure 1) shows all the objects that you have created in the current R session (Workspace tab) and the commands you have used in the current R session (History tab).</p></li>
+<li><p><strong>Files / Plots / Packages / Help</strong> - This window (bottom right in Figure 1) is primarily used for displaying plots (graphs) and for using the help system.</p></li>
+</ul>
+<p><strong>R</strong> is a command driven program, which means that you type in code to the Console window and it returns the result. The advantage of this is that the software is very powerful, but the disadvantage is that to start with the software requires a steep learning curve!</p>
+<p>You can either type code directly into the Console window, or you can type it into a text file, and then run the code you have written in the Console window. The advantage of the latter is that you can save the code, so that to run it a second time at a later date, simply open the text file and run the code, you do not need to type it in a second time! To create a text file to write your code in select</p>
+<p><strong>File -&gt; New File -&gt; R Script</strong></p>
+<p>and the RStudio window changes to:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/rstudio_session_4pane_layout.png" class="class figure-img" style="width:50.0%;height:50.0%"></p>
+<p></p><figcaption class="figure-caption">Typical 4 pane layout of RStudio IDE</figcaption><p></p>
+</figure>
+</div>
+<p>For a comprehensive one-page guide to the RStudio IDE, check out this <a href="https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf">‘cheatsheet’</a></p>
+<p>To save the R code (once you’ve written some!), go to</p>
+<p><strong>File -&gt; Save</strong></p>
+<p>and a dialog box will appear asking where (on which drive) you would like to save the code. Once saved, you can use your code again, so no need to type it in a second time. If you close RStudio and then open it again you can read in your code by going to</p>
+<p><strong>File -&gt; Open File…</strong></p>
+<p>or navigate to your file in the “Files/Plots/Pkgs/Help” window (see image below) and find the file from the location where you saved it.</p>
+</section>
+<section id="key-elements-of-r-programming-language" class="level2">
+<h2 class="anchored" data-anchor-id="key-elements-of-r-programming-language">Key Elements of R Programming Language</h2>
+<p>Now let’s start to explore what R can do for us.</p>
+<section id="functions" class="level3">
+<h3 class="anchored" data-anchor-id="functions">Functions</h3>
+<p>A function in R (or any computing language) is a short program that takes some input and returns some output. Functions may seem like an advanced topic (and they are), but you probably have already used many functions if you’ve used Microsoft Excel (think sum() or mean() - both of which are tiny programs that running specific actions on data).</p>
+<p><strong>Exercise 1</strong></p>
+<p>Try the following functions by writing them in your script. See if you can guess what they do, and make sure to add comments to your script about your assumed purpose.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dir</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.time</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Exercise 1 solutions</strong></p>
+<p><code>dir()</code> # Lists files in the working directory <code>sessionInfo()</code> # Gives the version of R and additional info including on attached packages <code>date()</code> # Gives the current date <code>Sys.time()</code> # Gives the current time</p>
+<section id="an-r-function-has-three-key-properties" class="level4">
+<h4 class="anchored" data-anchor-id="an-r-function-has-three-key-properties">An R Function has three key properties:</h4>
+<ul>
+<li>Functions have a name (e.g.&nbsp;<code>dir</code>); note that functions are case sensitive</li>
+<li>Function names are followed by a pair of <code>()</code></li>
+<li>Inside the parentheses, a function may take 0 or more <strong>arguments</strong></li>
+</ul>
+<p>An <strong>argument</strong> may be a specific input for your function and/or may modify the function’s behavior. For example the function <code>round()</code> will round a number with a decimal:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This will round a number to the nearest integer</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fl">3.14159</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+</div>
+</section>
+<section id="getting-help-with-function-arguments" class="level4">
+<h4 class="anchored" data-anchor-id="getting-help-with-function-arguments">Getting help with function arguments</h4>
+<p><strong>?</strong></p>
+<p>What if you wanted to round to one significant digit? <code>round()</code> can do this, but you may first need to read the help to find out how. To see the help (In R sometimes also called a “vignette”) enter a <code>?</code> in front of the function name:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>?<span class="fu">round</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The “Help” tab will show you information (often, too much information). You will slowly learn how to read and make sense of help files. Checking the “Usage” or “Examples” headings is often a good place to look first. If you look under “Arguments,” we also see what arguments we can pass to this function to modify its behavior.</p>
+<p><strong>args</strong></p>
+<p>You can also see a function’s argument using the <code>args()</code> function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">args</span>(round)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>function (x, digits = 0) 
+NULL</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#add code below to round 3.14159 to 3.14</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Contextual Help</strong></p>
+<p>Here is one last bonus we will mention about RStudio. It’s difficult to remember all of the arguments and definitions associated with a given function. When you start typing the name of a function and hit the <code>Tab</code> key, RStudio will display functions and associated help:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/studio_contexthelp1.png" class="class figure-img" style="width:75.0%;height:75.0%"></p>
+<p></p><figcaption class="figure-caption">Contextual Help 1</figcaption><p></p>
+</figure>
+</div>
+<p>Once you type a function, hitting the <code>Tab</code> inside the parentheses will show you the function’s arguments and provide additional help for each of these arguments.</p>
+<p><em>derived in part from <a href="https://datacarpentry.org/genomics-r-intro/01-introduction/index.html" class="uri">https://datacarpentry.org/genomics-r-intro/01-introduction/index.html</a></em></p>
+</section>
+</section>
+<section id="packages" class="level3">
+<h3 class="anchored" data-anchor-id="packages">Packages</h3>
+<p>Built into R is a wide range of functions that’ll assist you in analyzing and visualizing your data. However, the true power of R comes from the millions of additional functions you can load into your coding environment. There is an enormous development community that is continually updating and creating new packages that enhance the functionality of R.</p>
+<p>To install packages use the <code>install.package()</code> function and to load a package into your current environment use the <code>library()</code> function. For each of these functions, pass the name of the package inside quotations marks (e.g.&nbsp;<code>install.packages("cowsay")</code> and <code>library("cowsay")</code>)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#type in the the code to install and load the cowsay package below</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="objects" class="level3">
+<h3 class="anchored" data-anchor-id="objects">Objects</h3>
+<p>What might be called a variable in many languages is called an object in R.</p>
+<p>To create an object you need:</p>
+<ul>
+<li>a name (e.g.&nbsp;‘a’)</li>
+<li>a value (e.g.&nbsp;‘1’)</li>
+<li>the assignment operator (‘&lt;-’)</li>
+</ul>
+<p>Nifty keyboard shortcut alert! To make a &lt;- : hold <code>Alt</code> (or <code>option</code> on a Mac) and press the <code>-</code> (minus sign) key.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># this line creates the object 'a' and assigns it the value '1'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Next, run this line of code in your script. You can run a line of code by hitting the Run button that is just above the first line of your script in the header of the Source pane or you can use the appropriate shortcut:</p>
+<ul>
+<li>Windows execution shortcut: <code>Ctrl</code>+<code>Enter</code></li>
+<li>Mac execution shortcut: <code>Cmd()</code>+<code>Enter</code></li>
+</ul>
+<p>To run multiple lines of code, you can highlight all the line you wish to run and then hit Run or use the shortcut key combo listed above.</p>
+<p>##Exercise: Create Objects Create the following objects; give each object an appropriate name (your best guess at what name to use is fine):</p>
+<p>Create an object that has the value of number of pairs of human chromosomes</p>
+<p>Create an object that has a value of your favorite gene name</p>
+<p>Create an object that has this URL as its value: “<a href="ftp://ftp.ensemblgenomes.org/pub/bacteria/release-39/fasta/bacteria_5_collection/escherichia_coli_b_str_rel606/" class="uri">ftp://ftp.ensemblgenomes.org/pub/bacteria/release-39/fasta/bacteria_5_collection/escherichia_coli_b_str_rel606/</a>”</p>
+<p>Create an object that has the value of your birthday</p>
+<div class="cell" data-paged.print="true">
+
+</div>
+<p>####*Reassigning object names or deleting objects</p>
+<p>Once an object has a value, you can change that value by overwriting it. R will not give you a warning or error if you overwriting an object, which may or may not be a good thing depending on how you look at it.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You can also remove an object from R’s memory entirely. The <code>rm()</code> function will delete the object.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># delete the object 'a'</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="operators" class="level3">
+<h3 class="anchored" data-anchor-id="operators">Operators</h3>
+<p>Once an object exists (which by definition also means it has a mode), R can appropriately manipulate that object. For example, objects of the numeric modes can be added, multiplied, divided, etc. R provides several mathematical (arithmetic) operators including:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Operator</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>+</td>
+<td>Addition</td>
+</tr>
+<tr class="even">
+<td>-</td>
+<td>Subtraction</td>
+</tr>
+<tr class="odd">
+<td>*</td>
+<td>Multiplication</td>
+</tr>
+<tr class="even">
+<td>/</td>
+<td>Division</td>
+</tr>
+<tr class="odd">
+<td>^ or **</td>
+<td>Exponentiation</td>
+</tr>
+<tr class="even">
+<td>a%?%b</td>
+<td>Integer Division (where remainder is discarded)</td>
+</tr>
+<tr class="odd">
+<td>a%%b</td>
+<td>modulus (returns remainder after division)</td>
+</tr>
+</tbody>
+</table>
+<p>These can be used with literal numbers:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span><span class="sc">+</span> (<span class="dv">5</span><span class="sc">**</span><span class="fl">0.05</span>))<span class="sc">/</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.041899</code></pre>
+</div>
+</div>
+<p>and importantly, can also be used on any object that evaluates to (i.e.&nbsp;interpreted by R) a numeric object:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>number_of_presidents <span class="ot">&lt;-</span> <span class="dv">45</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>as_of_jan202021_number_of_presidents <span class="ot">&lt;-</span> number_of_presidents <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>as_of_jan202021_number_of_presidents</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 46</code></pre>
+</div>
+</div>
+</section>
+<section id="vectors" class="level3">
+<h3 class="anchored" data-anchor-id="vectors">Vectors</h3>
+<p>Vectors are probably the most used commonly used object type in R. <em>A vector is a collection of values that are all of the same type (numbers, characters, etc.)</em>.</p>
+<p>One of the most common ways to create a vector is to use the <code>c()</code> function - the “concatenate” or “combine” function. Inside the function you may enter one or more values; for multiple values, separate each value with a comma:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Create a list of your favorite foods</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Check the mode, length, and structure of 'fav_foods'</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Mode</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Length</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Structure</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="data-frame" class="level3">
+<h3 class="anchored" data-anchor-id="data-frame">Data frame</h3>
+<p>A data frame is the standard way in R to store tabular data. A data fame could also be thought of as a collection of vectors, all of which have the same length.</p>
+<p><strong>Importing tablular data into R</strong></p>
+<p>There are several ways to import data into R. For our purpose here, we will focus on using the tools every R installation comes with (so called “base” R) to import a comma-delimited file containing the results of our variant calling workflow. We will need to load the sheet using a function called read.csv().</p>
+<p>##Exercise - read.csv() Before using the read.csv() function, use R’s help feature to answer the following questions.</p>
+<p>Hint: Entering ‘?’ before the function name and then running that line will bring up the help documentation. Also, when reading this particular help be careful to pay attention to the ‘read.csv’ expression under the ‘Usage’ heading. Other answers will be in the ‘Arguments’ heading.</p>
+<ol type="A">
+<li><p>What is the default parameter for ‘header’ in the read.csv() function?</p></li>
+<li><p>What argument would you have to change to read a file that was delimited by semicolons (;) rather than commas?</p></li>
+<li><p>What argument would you have to change to read file in which numbers used commas for decimal separation (i.e.&nbsp;1,00)?</p></li>
+<li><p>What argument would you have to change to read in only the first 10,000 rows of a very large file?</p></li>
+</ol>
+<div class="cell" data-paged.print="true">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Before using the read.csv() function, use R’s help feature to answer the following questions.</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Hint: Entering ‘?’ before the function name and then running that line will bring up the help documentation. Also, when reading this particular help be careful to pay attention to the ‘read.csv’ expression under the ‘Usage’ heading. Other answers will be in the ‘Arguments’ heading.</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="co">#A) What is the default parameter for ‘header’ in the read.csv() function?</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="co">#B) What argument would you have to change to read a file that was delimited by semicolons (;) rather than commas?</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="co">#C) What argument would you have to change to read file in which numbers used commas for decimal separation (i.e. 1,00)?</span></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="co">#D) What argument would you have to change to read in only the first 10,000 rows of a very large file?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now, let’s read the file <code>friends_info.csv</code> which is located in <code>/Cloud/project/Data/</code>. Assign this data frame to an objected called <code>friends</code>. The first argument to ass to our <code>read.csv()</code> function is the file path for our data. The file path must be in quotes and now is a good time to remember to use tab autocompletion. <strong>If you use tab autocompletion you avoid typos and errors in file paths. Use it!</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="do">## read in a CSV file and save it as 'friends'</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>friends <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"friends_info.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 236 Columns: 8</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (3): title, directed_by, written_by
+dbl  (4): season, episode, us_views_millions, imdb_rating
+date (1): air_date</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+</div>
+<p>One of the first things you should notice is that in the Environment window, you have the newly created <code>friends</code> object. listed with 236 obs. (observations/rows) of 29 variables (columns). Double-clicking on the name of the object will open a view of the data in a new tab.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/dataframe.png" class="class figure-img" style="width:75.0%;height:75.0%"></p>
+<p></p><figcaption class="figure-caption">View our new data frame</figcaption><p></p>
+</figure>
+</div>
+<p><strong>Summarizing and determining the structure of a data frame.</strong></p>
+<p>Using only two functions, we can learn a lot about a data frame including some summary statistics as well as well as the “structure” of the data frame. Let’s examine what each of these functions can tell us:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="do">## get summary statistics on a data frame</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Our data frame had 8 variables, so we get 8 fields that summarize data. The <code>imdb_rating</code>, <code>us_views_millions</code>, <code>episode</code>, and <code>season</code> variables are numerical data and so you get summary statistics on the min/max values, as well as mean, median, and interquartile ranges. Variables like <code>air_date</code> and <code>title</code> are treated as categorical data.</p>
+<p>Before we analyze the data further, we also need to know a little more about the data frame structure to do that we use the <code>str()</code> function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="do">## get the structure of a data frame</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Ok, that’s a lot up unpack! Some things to notice.</p>
+<ul>
+<li>the object type data.frame is displayed in the first row along with its dimensions, in this case 236 observations (rows) and 8 variables (columns)</li>
+<li>Each variable (column) has a name (e.g.&nbsp;title). This is followed by the object mode (e.g.&nbsp;factor, int, num, etc.). Notice that before each variable name there is a $ - this will be important later.</li>
+</ul>
+</section>
+</section>
+<section id="exercise-import-explore-new-data-set" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-import-explore-new-data-set"><strong>Exercise: Import explore new data set</strong></h2>
+<p>Import the friends_emotions.csv found in the slides_demo folder and assign the data frame to a new object “emotions”</p>
+<p>Explore the structure of emotions. How many variables and observations does your data frame have? What mode are your variables?</p>
+<p>Run summary statistics on your data frame? Is there anything interesting from this summary?</p>
+<div class="cell" data-paged.print="true">
+
+</div>
+</section>
+<section id="exercise-explore-the-datasets-built-into-r" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-explore-the-datasets-built-into-r"><strong>Exercise: Explore the datasets built into R</strong></h2>
+<p>There are a number of datasets built into R. They can explored by calling the data() function.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co">#type the code required to call the data function</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Explore 3 individual datasets by calling them</p>
+<div class="cell">
+
+</div>
+<p>Assign the dataset that you are most interested in to a new object called best_data. Explore best_data using the summary and structure functions we talked about above. What does the head() function do?</p>
+<div class="cell">
+
+</div>
+</section>
+<section id="after-class-learning-activity-your-first-code-with-cowsay" class="level2">
+<h2 class="anchored" data-anchor-id="after-class-learning-activity-your-first-code-with-cowsay">After Class Learning Activity: Your first code with COWSAY</h2>
+<p>For your next grant, you’d really like to include a figure what has a cow asking (politely) for a strong score. Let’s figure out how to do that!</p>
+<p>You are in luck, someone kind soul in this world created a package called “cowsay” that draws animals with dialogs boxes that you can populate!</p>
+<ol type="1">
+<li><p>In your first two lines of code, install and load the cowsay package</p></li>
+<li><p>In line 4 of your code, use one of the help methods we learned to ascertain more about the cowsay package.</p></li>
+<li><p>Now that we know the cowsay package contains a single function, say(), determine what arguments you can pass to the function.</p></li>
+<li><p>In line 5 of your code, called the say() function and pass it the phrase/string “Me need $”</p></li>
+<li><p>In line 6 of your code, let’s create an object that contains your phrase</p></li>
+<li><p>In line 7 of your code, pass your object to the say().</p></li>
+<li><p>Cats are great but we really want a different animal to convey our feelings. Determine what argument you need to call to change your animal.</p></li>
+<li><p>Red text might be a little aggressive for your grant, determine what argument you need to call to change the color of your phrase. While you are at it, color the color of the animal as well.</p></li>
+<li><p>Some packages have built in data. In COWSAY, there is a “rms” data set that pulls a random ‘quote ’fact’ about Richard Stallman from rmsfact::rmsfact() package. Instead of having your animal say your phrase, have it say a random quote from Richard.</p></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co">#cowsay code</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
