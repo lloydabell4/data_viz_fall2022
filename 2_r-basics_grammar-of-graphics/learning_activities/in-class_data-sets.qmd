@@ -15,7 +15,7 @@ The R language comes with numerous built-in datasets which are normally used as 
 Call the `data` function from RStudio to view all built-in datasets.
 
 ```{r}
-
+data()
 ```
 
 ## Selecting a dataset and viewing contents
@@ -23,7 +23,9 @@ Call the `data` function from RStudio to view all built-in datasets.
 Find 3 datasets from that list and view the first few rows of the data (use the head() function)
 
 ```{r}
-
+head(AirPassengers)
+head(women)
+head(Nile)
 ```
 
 ## Explore the dataset with the functions we learned in r-basics
@@ -31,7 +33,12 @@ Find 3 datasets from that list and view the first few rows of the data (use the 
 Select the dataset you are most interested in and assign the object to a new object called "fav_data". Use the exploratory functions we've learned in class to further explore your dataset. Comment on what each function does.
 
 ```{r}
+data()
+rm(Nile)
+precip
+fav_data <- precip
 
+summary(precip)
 ```
 
 # Part 2

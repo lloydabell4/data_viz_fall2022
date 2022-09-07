@@ -1,0 +1,20 @@
+---
+title: "first_RMD"
+author: "Andrew Bell"
+date: '2022-08-31'
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R_Basics
+
+These are our first primers
+
+```{r }
+dr_bell <- 39
+?lm()
+menu <- c("peanuts","almonds","m&ms","pasta","ice cream")
+```

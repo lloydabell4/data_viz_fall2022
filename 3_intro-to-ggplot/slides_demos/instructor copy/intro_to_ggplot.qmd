@@ -89,9 +89,10 @@ We are going to use the friends_info dataset we used at the end of Rzero to get 
 First let's take a look at our friends_info. Note how many variables and observations are found in the dataset.
 
 ```{r, results='hide'}
+friends_info <- read_csv("friends_info.csv")
+friends_info
 
-
-
+head(friends_info)
 ```
 
 We want to create an object (first_viz) that contains a visualization created by the ggplot function. The ggplot function takes two essential arguments: data and the mapping of variables to specific aesthetics (like x and y coordinates). For our first visualization, we are going to plot the number of view (US_views_millions) by the critic ratings (imdb_rating) for each episode.

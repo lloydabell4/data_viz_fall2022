@@ -1,0 +1,29 @@
+---
+title: "college data"
+format: pdf
+editor: visual
+---
+
+## College Data
+
+college_data is a data frame with 777 observations on the following 18 variables. More information on the variables can be found here: https://www.kaggle.com/datasets/faressayah/college-data
+
+## Import Data
+
+Import the data College_Data.csv
+
+```{r}
+
+```
+
+Explore your variables
+
+```{r}
+
+```
+
+Determine three variables that might be interesting and create a plot using ggplot
+
+```{r}
+
+```

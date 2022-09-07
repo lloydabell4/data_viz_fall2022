@@ -1,5 +1,5 @@
 ---
-title: 'Finished Assignment 2'
+title: 'Finished Assignment 1
 output: pdf_document
 ---
 
@@ -8,7 +8,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```
 
-## Assignment 2
+## Assignment 1
 
 For this assignment I'd like for you to explore the power of ggplot while also applying your data visualization critique knowledge to your new visualizations
 

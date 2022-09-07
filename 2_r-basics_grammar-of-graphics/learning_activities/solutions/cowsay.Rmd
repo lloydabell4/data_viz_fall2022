@@ -1,0 +1,55 @@
+---
+title: "cowsay"
+author: "Andrew Bell"
+date: '2022-09-07'
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Cowsay
+For your next grant, you'd really like to include a figure what has a cow asking (politely) for a strong score. Let's figure out how to do that!
+
+You are in luck, someone kind soul in this world created a package called "cowsay" that draws animals with dialogs boxes that you can populate!
+
+In your first two lines of code, install and load the cowsay package
+
+In line 4 of your code, use one of the help methods we learned to ascertain more about the cowsay package.
+
+Now that we know the cowsay package contains a single function, say(), determine what arguments you can pass to the function.
+
+In line 5 of your code, called the say() function and pass it the phrase/string "Me need $"
+
+In line 6 of your code, let's create an object that contains your phrase
+
+In line 7 of your code, pass your object to the say().
+
+Cats are great but we really want a different animal to convey our feelings. Determine what argument you need to call to change your animal.
+
+Red text might be a little aggressive for your grant, determine what argument you need to call to change the color of your phrase. While you are at it, color the color of the animal as well.
+
+Some packages have built in data. In COWSAY, there is a "rms" data set that pulls a random 'quote 'fact' about Richard Stallman from rmsfact::rmsfact() package. Instead of having your animal say your phrase, have it say a random quote from Richard.
+```{r}
+#install.packages("cowsay")
+#install packages not needs because only need to do it once
+
+library(cowsay)
+
+?cowsay
+
+args(say)
+
+say(what = "me need $")
+
+words <- "me need $"
+
+say(what = words, by = "cow", by_color = "blue", what_color = "green")
+
+#install.packages("rmsfact")
+library(rmsfact)
+say(what = rmsfact(), by = "cow", by_color = "blue", what_color = "green")
+
+```
+
