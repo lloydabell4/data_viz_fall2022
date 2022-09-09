@@ -16,7 +16,8 @@ You are in luck, someone kind soul in this world created a package called "cowsa
 
 In your first two lines of code, install and load the cowsay package
 
-In line 4 of your code, use one of the help methods we learned to ascertain more about the cowsay package.
+In line 4 of your code, use one of the help methods we learned to s
+sascertain more about the cowsay package.
 
 Now that we know the cowsay package contains a single function, say(), determine what arguments you can pass to the function.
 
