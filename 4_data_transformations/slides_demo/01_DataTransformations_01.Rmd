@@ -194,7 +194,7 @@ The na.rm argument (found within all aggregation functions) removes the missing 
 ```{r}
 friends_info_na%>%
   group_by(directed_by)%>%
-  summarise(mean_views = mean(us_views_millions, na.rm = TRUE))
+  summarise(mean_views = mean(us_views_millions))
 
 #note Gail Mancuso 
 ```
