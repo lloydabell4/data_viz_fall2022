@@ -1,0 +1,42 @@
+---
+title: "Data Transformation Activity"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Gapminder Transformation
+
+Load the gapminder data into a dataframe called df
+
+```{r}
+library(gapminder)
+library(tidyverse)
+
+```
+
+Transform the data to find the mean life expectancy and total population for each continent at each year in the data. 
+
+```{r}
+
+```
+
+Create a new variable called pop_exp that is the ratio of total population by mean life expectancy
+```{r}
+
+```
+
+
+Filter for years after 1970 and continents Asia and Europe then sort the data by year
+
+```{r}
+
+```
+
+Visualize how the ratio of population and life expectancy change over time for Asia and Europe
+```{r}
+
+```
+

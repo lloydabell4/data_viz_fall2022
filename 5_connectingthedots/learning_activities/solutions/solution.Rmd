@@ -1,0 +1,91 @@
+---
+title: "Data Transformation Activity"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Babynames Assignment
+
+```{r}
+library(tidyverse)
+#install.packages("babynames")
+library(babynames)
+```
+
+### 1. Look at the data (1 pt)
+
+The package babynames contains an object of the same name that contains all the data about babynames.The babynames dataset has historical information about births of babies in the U.S.
+
+View and examine the data and its structure to understand what variables are contained within the data
+
+```{r}
+head(babynames)
+str(babynames)
+```
+
+### 2. Visually Explore the Data for Popular Girl Names (1 pt)
+
+Filter the data for the names Emily, Kathleen, Alexandra, and Beverly.
+
+```{r}
+dat <- babynames %>% 
+  filter(name %in% c("Emily","Kathleen","Alexandra","Beverly"), sex=="F")
+```
+
+Visualize the resulting data in a line graph by mapping year to the x-axis, proportion of name (prop) to the y-axis and name to color.
+
+```{r}
+ggplot(data = dat,aes(x = year,y = prop, colour=name))+
+  geom_line()  
+```
+
+Because in most countries assigned sex at birth is binary, there is no data on intersex, trans or non-binary names. In lieu of that, here's the [Wikipedia page about gender-neutral names and naming laws](https://en.wikipedia.org/wiki/Unisex_name) around the world which will hopefully make you question why on earth we ascribe someone's entire gender identity to a bunch of sounds and letters we use to label them.
+
+### 3. Create a new variable for decade (2 pts)
+
+Create a new column for decade Hint: formula to find decade: **floor(year/10)\*10**
+
+```{r}
+new_dat <- mutate(.data = babynames, # the tibble you want to add a column to
+                  decade = floor(year/10) *10) # new column name = what you want it to contain
+head(new_dat)
+```
+
+### 4. Create a new dataframe that determines the mean proportion for each name by sex and decade. (2 pts)
+
+For this I want you to explore the group_by() and summarize() functions.
+
+```{r}
+new_dat2 <- new_dat%>%
+  group_by(name,sex,decade)%>%
+  summarise(mean_prop = mean(prop))
+```
+
+### 5. Using your dataset from step 4, figure out the 5 most popular baby names for both sexes in the 1880 decade
+
+```{r}
+dat_1880 <- new_dat2 %>%
+  filter(decade == 1880)%>%
+  arrange(desc(mean_prop))
+
+#m: John, William, James, George, Charles
+#f: Mary, Anna, Emma, Elizabeth, Minnie
+
+```
+
+### 6. Using your dataset from step 4, create a visualization that tracks the popularity of the 5 most popular baby names in 1880 across the decades (4 pts)
+
+```{r}
+names <- c("John", "William", "James", "George", "Charles","Mary", "Anna", "Emma", "Elizabeth", "Minnie")
+
+viz <- new_dat2 %>%
+  filter(name %in% names)%>%
+  ggplot(mapping = aes(x = decade, y = mean_prop, color = name))+
+  geom_line()+
+  facet_wrap(~sex)
+
+viz
+```
