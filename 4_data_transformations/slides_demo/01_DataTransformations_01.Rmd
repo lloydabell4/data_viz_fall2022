@@ -118,7 +118,7 @@ The `select()` function works with a number of 'helper' functions:
 Try using these helper functions to Reminder that you can use the `?select` for more details about the `select()` function.
 
 ```{r}
-
+?select()
 ```
 
 ### Add new variables with **`mutate()`**
@@ -129,7 +129,7 @@ Let's say we want to make a new value that is a ratio of the views and imdb_rati
 
 ```{r}
 friends_ratio <- mutate(friends_info, 
-                        best = us_views_millions / imdb_rating)
+                        best = us_views_millions * imdb_rating)
 
 friends_ratio <- select(friends_ratio, best, title)
 
@@ -172,6 +172,17 @@ IMDB_byseason <- friends_info%>%
   group_by(season)%>%
   summarise(mean_IMDB = mean(imdb_rating))%>%
   arrange(desc(mean_IMDB))
+
+#which director had the highest mean views
+direct_views <- friends_info%>%
+  group_by(directed_by)%>%
+  summarise(mean_views = mean(us_views_millions))%>%
+  arrange(desc(mean_views))%>%
+  filter(mean_views > 25)
+
+
+
+
 
 IMDB_byseason
 #option number 2 - generate a boxplot or violin plot to look at the distribution of the ratings by season without having to specific run any data transformations.
