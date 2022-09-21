@@ -1,29 +1,33 @@
 ---
 title: "Babynames Continued"
 output:
-  pdf_document: default
   html_document:
     df_print: paged
+  pdf_document: default
   word_document: default
 ---
-#Set up Code
+
+### Set up Code
+
 Load the tidyverse and babynames packages
+
 ```{r setup}
 knitr::opts_chunk$set(echo = TRUE)
 
 ```
 
-#Find the top names from your birth year
-Find the top five (boy or girl) names from your birth year and assign the output to a table. Hint (use the slice(1:5) function to 'cut off' the top 5 rows of a dataset)
+### Top 5 Names from your Birth Year
+
+Find the top names from your birth year Find the top five (boy or girl) names from your birth year and assign the output to a new object. Hint (you can use the slice(1:5) function to 'cut off' the top 5 rows of a dataset)
 
 ```{r}
 
 ```
 
-#Visualize the popularity of those names (and yours) across all of the years
-Now I want you to look at the popularity of those names (as well as your name) across all of the years in the dataset. This requires a strong working knowledge of the filter() function. 
+### Top 5 Names Across the Years
+
+Visualize the popularity of those names (and yours) across all of the years Now I want you to look at the popularity of those names (*as well as your name*) across all of the years in the dataset. This requires a strong working knowledge of the filter() function.
 
 ```{r}
 
 ```
-

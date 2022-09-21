@@ -6,7 +6,8 @@ output:
     df_print: paged
   word_document: default
 ---
-#Set up Code
+
+### Set up Code
 
 ```{r}
 tuition_cost <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-03-10/tuition_cost.csv')
@@ -16,15 +17,11 @@ tuition_income <- tuition_income%>%
   filter(campus == "On Campus" & year == 2018)
 ```
 
-
-Congratulations on your new position at the GetIntoCollege Consulting firm. For your first your boss asks you to create three visualizations that will help your clients get a better understanding of the financial cost of attending college. It will be important to remember that your clientele is coming from multiple incomes brackets. 
+Congratulations on your new position at the GetIntoCollege Consulting firm. For your first task your boss asks you to create three visualizations that will help your clients get a better understanding of the financial cost of attending college. It will be important to remember that your clientele is coming from multiple income brackets.
 
 Your clients will always be 'out of state' - meaning the total-price variable is the out-of-state price
 
 Let's start by creating a list of schools for our visualizations. What schools were you interested in when you were in high school?
-
-*Basic Exploratory Data Analysis Question*
-Is the cost of college/university different based on income bracket and how do individual institutions differ in their cost across the same income brackets. 
 
 *Select the Colleges/Universities that you'd like to explore*
 
@@ -32,11 +29,21 @@ Is the cost of college/university different based on income bracket and how do i
 colleges <- c()
 ```
 
+### *Basic Exploratory Data Analysis*  
+
+*The Question*
+
+Is the cost of college/university different based on income bracket and how do individual institutions differ in their cost across the same income brackets.
+
+### Amount of Support and Percentage of that Support
+
 *Create two new variables that reflect the average amount of support each college offers and the percentage of that support based on the total price*
 
 ```{r}
 
 ```
+
+### Total Price by School
 
 *Show the Total price of attendance of the schools you are interested in and sort your visualization by that price (most expensive first, least expensive last)*
 
@@ -44,17 +51,19 @@ colleges <- c()
  
 ```
 
+### Net Cost Across School and Income Brackets
+
 *Examine how your schools net cost differs across all income brackets*
+
 ```{r}
 
 ```
 
-Explore the distribution of financial support by income bracket for your schools using your newly created variable percentage of support. 
+### Percentage of Support Across School and Income Brackets
+
+*Explore the distribution of financial support by income bracket for your schools using your newly created variable percentage of support.*
 
 ```{r}
 
 
 ```
-
-
-
