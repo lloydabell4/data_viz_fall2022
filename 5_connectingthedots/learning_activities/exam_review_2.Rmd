@@ -1,0 +1,52 @@
+---
+title: "Species"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+  word_document: default
+---
+
+**Set up Code**
+
+```{r setup}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+surveys_complete <- read_csv("surveys_complete.csv")
+```
+
+For this exercise, I'd like for you to explore a mammals dataset collected by: Ernest, Morgan; Brown, James; Valone, Thomas; White, Ethan P. (2015): Portal Project Teaching Database. figshare. Dataset. <https://doi.org/10.6084/m9.figshare.1314459.v5>
+
+**Number of Species ID over Year Do the number of measured species (identified by species_id variable) change over time (year).**
+
+```{r}
+
+```
+
+**What are the most numerous 3 species identified in 2002?**
+
+Identify which were the most numerous 3 species identified in 2002 and assign the output to a new dataset.
+
+```{r}
+
+```
+
+**Do the most numerous 3 species from 2002 have distinctive measurements (hindfoot length and weight) from each other?**
+
+Now we want to determine if those top 3 species have distinctive measurements from each other. Write the code required to visualize the relationship between weight and hindfoot length for each species. If there are distinctive characteristics for the species describe them below.
+
+```{r}
+
+```
+
+**Exploratory Data Analysis Question**
+
+Write an exploratory data analysis question related to sex that you could answer from this data.
+
+**Exploratory Data Analysis Answer**
+
+Write the code required to answer the exploratory data analysis question above.
+
+```{r}
+
+```

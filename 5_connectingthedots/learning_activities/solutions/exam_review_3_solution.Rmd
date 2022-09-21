@@ -1,0 +1,93 @@
+---
+title: "Exam Review 3"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+  word_document: default
+---
+#Set up Code
+
+```{r}
+tuition_cost <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-03-10/tuition_cost.csv')
+tuition_income <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-03-10/tuition_income.csv') 
+
+tuition_income <- tuition_income%>%
+  filter(campus == "On Campus" & year == 2018)
+```
+
+
+Congratulations on your new position at the GetIntoCollege Consulting firm. For your first your boss asks you to create three visualizations that will help your clients get a better understanding of the financial cost of attending college. It will be important to remember that your clientele is coming from multiple incomes brackets. 
+
+Your clients will always be 'out of state' - meaning the total-price variable is the out-of-state price
+
+Let's start by creating a list of schools for our visualizations. What schools were you interested in when you were in high school?
+
+*Basic Exploratory Data Analysis Question*
+Is the cost of college/university different based on income bracket and how do individual institutions differ in their cost across the same income brackets. 
+
+*Select the Colleges/Universities that you'd like to explore*
+
+```{r}
+colleges <- c("University of Virginia-Main Campus","College of William and Mary","Virginia Commonwealth University","Washington and Lee University","University of Richmond","Hampden-Sydney College")
+```
+
+*Create two new variables that reflect the average amount of support each college offers and the percentage of that support based on the total price*
+
+```{r}
+va_colleges <- tuition_income%>%
+  filter(state == "VA")%>%
+  mutate(support = total_price-net_cost,
+         pct_support = (total_price-net_cost)/total_price)
+```
+
+*Show the Total price of attendance of the schools you are interested in and sort your visualization by that price (most expensive first, least expensive last)*
+
+```{r}
+va_colleges%>%
+  filter(name %in% colleges & income_lvl=="Over 110,000")%>%
+  ggplot(aes(total_price, fct_reorder(name, total_price)))+
+  geom_col(aes(fill = name))+
+  scale_x_continuous(labels=scales::dollar_format())+
+  labs(x = "Total Price of Out of State Attendence",
+       y = "College/Universities", 
+       title = "The Price of Attendence")+
+  theme(legend.position = "none")  
+```
+
+*Examine how your schools net cost differs across all income brackets*
+```{r}
+va_colleges%>%
+  filter(name %in% colleges)%>%
+  ggplot(aes(net_cost, fct_reorder(name, net_cost)))+
+  geom_col(aes(fill = name))+
+  facet_wrap(~income_lvl)+
+  scale_x_continuous(labels=scales::dollar_format())+
+  theme(legend.position = "none")+
+  labs(x = "Net Cost of Out of State Attendence",
+       y = "College/Universities", 
+       title = "The Net Cost (price - aid) of Attendence")+
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 90, hjust=0))  
+```
+
+Explore the distribution of financial support by income bracket for your schools using your newly created variable percentage of support. 
+
+```{r}
+
+va_colleges%>%
+  filter(name %in% colleges & campus == "On Campus" & year == 2018)%>%
+  ggplot(aes(pct_support, income_lvl,fill = pct_support))+
+  geom_col()+
+  #coord_flip()+
+  facet_wrap(~name)+
+  scale_fill_continuous(type = "viridis")+
+  scale_x_continuous(labels=scales::percent)+
+  labs(x = "Percent of Financial Support ((Total Price - Net Cost)/Total Price)",
+       y = "Income Brackets", 
+       title = "Distribution of Financial Support by Income Bracket for \nPrestigous Virginia Universities/Colleges")+
+  theme(legend.position = "none")  
+```
+
+
+

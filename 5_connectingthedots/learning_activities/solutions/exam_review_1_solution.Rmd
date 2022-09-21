@@ -1,0 +1,37 @@
+---
+title: "Babynames Continued"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+  word_document: default
+---
+#Set up Code
+```{r setup}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(babynames)
+```
+
+#Find the top names from your birth year
+Find the top five (boy or girl) names from your birth year and assign the output to a table. Hint (use the slice(1:5) function to 'cut off' the top 5 rows of a dataset)
+
+```{r}
+top_5 <- babynames%>%
+  filter(year == 1983&sex == "M")%>%
+  arrange(desc(prop))%>%
+  slice(1:5)
+
+top_5
+```
+
+#Visualize the popularity of those names (and yours) across all of the years
+Now I want you to look at the popularity of those names (as well as your name) across all of the years in the dataset. This requires a strong working knowledge of the filter() function. 
+
+```{r}
+babynames%>%
+  filter(sex == "M" & (name %in% top_5$name | name == "Andrew"))%>%
+  ggplot(aes(x = year, y= prop))+
+  geom_line(aes(color = name))
+```
+

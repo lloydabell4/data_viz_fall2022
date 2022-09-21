@@ -1,0 +1,85 @@
+---
+title: "Species"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+  word_document: default
+---
+
+**Set up Code**
+
+```{r setup}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+surveys_complete <- read_csv("surveys_complete.csv")
+```
+
+For this exercise, I'd like for you to explore a mammals dataset collected by: Ernest, Morgan; Brown, James; Valone, Thomas; White, Ethan P. (2015): Portal Project Teaching Database. figshare. Dataset. <https://doi.org/10.6084/m9.figshare.1314459.v5>
+
+**Number of Species ID over Year Do the number of measured species (identified by species_id variable) change over time (year).**
+
+```{r}
+surveys_complete%>%
+  group_by(species_id, year)%>%
+  summarise(n = n())%>%
+  ggplot(aes(x = year, y = n, color = species_id))+
+  geom_line()
+```
+
+**What are the most numerous 3 species identified in 2002?**
+
+Identify which were the most numerous 3 species identified in 2002 and assign the output to a new dataset.
+
+```{r}
+top3 <-  surveys_complete%>%
+  filter(year == 2002)%>%
+  group_by(species_id)%>%
+  summarise(n = n())%>%
+  slice(1:3)
+```
+
+**Do the most numerous 3 species from 2002 have distinctive measurements (hindfoot length and weight) from each other?**
+
+Now we want to determine if those top 3 species have distinctive measurements from each other. Write the code required to visualize the relationship between weight and hindfoot length for each species. If there are distinctive characteristics for the species describe them below.
+
+```{r}
+surveys_complete%>%
+  filter(species_id %in% top3$species_id)%>%
+  ggplot(aes(hindfoot_length, weight, color = species_id))+
+  geom_point(aes(alpha = 0.5))
+
+```
+
+*The NL species is clearly distinctive from the other two species in terms of weight and length. THe DM and DO species are less distinctive but the DM species has more smaller length individuals than the DO species.*
+
+**Exploratory Data Analysis Question**
+
+Write an exploratory data analysis question related to sex that you could answer from this data.
+
+*For the 5 most numerous species in the dataset, does weight differ depending on sex?*
+
+**Exploratory Data Analysis Answer**
+
+Write the code required to answer the exploratory data analysis question above.
+
+```{r}
+#determine most numerous 5 species
+surveys_complete%>%
+  filter(species_id %in% top5_mammals$species_id)%>%
+  group_by(species_id,sex)%>%
+  drop_na()%>%
+  slice(1:5)
+
+#build table
+surveys_complete%>%
+  filter(species_id %in% top5_mammals$species_id)%>%
+  group_by(species_id,sex)%>%
+  drop_na()%>%
+  summarise(mean_weight = mean(weight))%>%
+#buid visualization
+  ggplot(aes(x = species_id, y = mean_weight))+
+  geom_col(aes(fill = sex), position = "dodge")
+```
+
+*For the DM, DO, PB species, the males species has a larger mean weight than females. For the RM species, the reverse is true (F weight \> M weight). For the PP species there are 4 distinctive sexes and the P sex has the lowest mean weight.*

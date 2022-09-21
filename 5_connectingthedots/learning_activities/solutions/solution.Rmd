@@ -69,7 +69,9 @@ new_dat2 <- new_dat%>%
 ```{r}
 dat_1880 <- new_dat2 %>%
   filter(decade == 1880)%>%
-  arrange(desc(mean_prop))
+  arrange(desc(mean_prop))%>%
+  group_by(sex)%>%
+  slice(1:5)
 
 #m: John, William, James, George, Charles
 #f: Mary, Anna, Emma, Elizabeth, Minnie
@@ -79,6 +81,9 @@ dat_1880 <- new_dat2 %>%
 ### 6. Using your dataset from step 4, create a visualization that tracks the popularity of the 5 most popular baby names in 1880 across the decades (4 pts)
 
 ```{r}
+#two ways of doings this
+names <- dat_1880$name
+
 names <- c("John", "William", "James", "George", "Charles","Mary", "Anna", "Emma", "Elizabeth", "Minnie")
 
 viz <- new_dat2 %>%
