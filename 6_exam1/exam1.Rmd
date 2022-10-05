@@ -18,8 +18,10 @@ For this exam you will need to import two datasets: sleep.csv: This dataset cont
 spotify_songs.csv: This dataset contains variables (columns) about songs (rows) found in the spotify library in 2019.
 
 ```{r import data}
-sleep <- read_csv("sleep.csv")
-spotify_songs <- read_csv("spotify_songs.csv")
+
+
+
+
 ```
 
 # Section 1: Sleep Study
