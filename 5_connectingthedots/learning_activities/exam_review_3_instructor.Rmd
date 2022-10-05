@@ -1,16 +1,15 @@
 ---
 title: "exam_review_3"
 output:
+  pdf_document: default
   html_document:
     df_print: paged
-  pdf_document: default
   word_document: default
 ---
 
 ### Set up Code
 
 ```{r}
-library(tidyverse)
 tuition_cost <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-03-10/tuition_cost.csv')
 tuition_income <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-03-10/tuition_income.csv') 
 
@@ -30,7 +29,7 @@ Let's start by creating a list of schools for our visualizations. What schools w
 colleges <- c()
 ```
 
-### *Basic Exploratory Data Analysis*
+### *Basic Exploratory Data Analysis*  
 
 *The Question*
 

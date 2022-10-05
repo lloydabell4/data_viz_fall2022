@@ -1,0 +1,130 @@
+---
+title: "Exam 1"
+output: pdf_document
+date: "`r Sys.Date()`"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(readr)
+library(lubridate)
+```
+
+## Import Data
+
+For this exam you will need to import two datasets: sleep.csv: This dataset contains data from a sleep study that looked at reaction times for control and sleep deprived individuals over the course of 10 days.
+
+spotify_songs.csv: This dataset contains variables (columns) about songs (rows) found in the spotify library in 2019.
+
+```{r import data}
+sleep <- read_csv("sleep.csv")
+spotify_songs <- read_csv("spotify_songs.csv")
+```
+
+# Section 1: Sleep Study
+
+## Question 1 - Does Sleep Deprivation Impact Reaction Time?
+
+Write the code required to create this visualization
+
+```{r Question 1}
+
+```
+
+## Question 2 - When Do the Effects of Sleep Deprivation Occur?
+
+Describe a visualization (similar to question 1) that would answer the question: What day does the mean reaction time extend beyond 300 ms for the deprived group? (***Bonus 1 pt*** - write the code required to create the visualization)
+
+```{r Question 2}
+
+
+
+
+
+```
+
+# Section 2: Spotify Songs
+
+## Question 3 - R Code in Your Own Words
+
+Describe (in complete sentences and using the terminology we’ve used in class) what the code below does?
+
+```{r Question 3}
+spotify_songs%>%
+  filter(year == 2019 & track_popularity>90)%>%
+  select(year, track_popularity, track_name, track_artist, playlist_genre, key)%>%
+  group_by(playlist_genre)%>%
+  summarise(count = n())%>%
+  ggplot(aes(x = fct_reorder(playlist_genre, count), fill = playlist_genre, y = count))+
+  geom_col()+
+  coord_flip()+
+  guides(fill = "none")+
+  labs(y = "Number of Songs with Popularity > 90 in Spotify",
+       x = "Music Genre",
+       title = "Number of Popular Songs from 2019")
+```
+
+## Question 4 - Exploring Acousticness in EDM and Rock Songs
+
+Part 1: Write the code required to describe the relationship between the mean acousticness of songs and year in the edm and rock genre. 
+
+Part 2: Using complete sentences, how has acousticness changed over the years for edm and rock songs? 
+
+
+
+
+
+
+```{r Question 4}
+#part 1
+
+
+
+
+```
+
+## Question 5 - Are songs getting shorter? 
+
+Part 1: Write the code required to answer the question: Since 2010, are songs getting shorter?
+
+Part 2: In general, are songs from specific playlist_genres getting shorter over time? Write the code required to describe the role playlist_genre has on song duration since 2010. 
+```{r Question 5}
+#part 1
+
+
+
+
+
+#part 2
+
+
+
+
+```
+
+## Question 6 - Write your own exploratory data analysis question
+
+Write an exploratory data analysis question that explores the relationships between the variables popularity, year, and track_artist. 
+
+
+
+
+
+
+## Question 7 - Write the code
+
+Write the code required to answer the question you've poised in question 6. 
+```{r Question 7}
+
+
+
+
+
+```
+
+
+
+
+
+

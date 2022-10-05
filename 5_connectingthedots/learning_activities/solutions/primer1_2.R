@@ -10,7 +10,7 @@ tuition_income%>%
   group_by(year, state, income_lvl)%>%
   summarise(mean_price = mean(total_price),
             mean_cost = mean(net_cost))%>%
-  ggplot(aes(year, mean_cost, fill = income_lvl))+
+  ggplot(mapping = aes(x = year, y = mean_cost, fill = income_lvl))+
   geom_col(position = "dodge")
 
 #critique this visualization
