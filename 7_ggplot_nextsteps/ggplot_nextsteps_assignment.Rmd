@@ -1,0 +1,58 @@
+---
+title: "ggplot next steps assignment"
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+  word_document: default
+---
+
+### Set up Code
+
+```{r}
+library(tidyverse)
+#install.packages("palmerpenguins")
+library(palmerpenguins)
+
+data <- palmerpenguins::penguins
+```
+
+Imagine you've just spent the last 2 months on a marine biology expedition collecting data about three species of penguins: Adelie, Chinstrap, and Gentoo.
+
+Now it is time to start exploring the data and identifying differences across the three species.
+
+## *Explore the Dataset*
+
+Generate the code required to understand the structure of your dataset and the kinds of variables you've collected. (1 pt)
+
+```{r}
+
+
+
+```
+
+## *Basic Exploratory Data Analysis*
+
+*The Question 1*
+
+Can we identify specific penguin species by their body mass and flipper length?
+
+### Create Visualization that Answers the Question 1
+
+For this visualization be sure to map body mass, flipper length, and species onto the same visualization. Use the formatting techniques learned in the ggplot next steps class, to make your visualization as effective as possible. (7 pts)
+
+```{r}
+
+```
+
+*The Question 2*
+
+Write a question that addresses body mass, species, flipper length, and sex.
+
+### Create Visualization that Answers the Question 2
+
+Create a visualization that answers question 2. Use the formatting techniques learned in the ggplot next steps class, to make your visualization as effective as possible. (7 pts)
+
+```{r}
+
+```

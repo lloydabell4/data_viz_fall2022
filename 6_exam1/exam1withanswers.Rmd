@@ -1,0 +1,178 @@
+---
+title: "Exam 1"
+output: pdf_document
+date: "`r Sys.Date()`"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(readr)
+library(lubridate)
+```
+
+## Import Data
+
+For this exam you will need to import two datasets: sleep.csv: This dataset contains data from a sleep study that looked at reaction times for control and sleep deprived individuals over the course of 10 days.
+
+spotify_songs.csv: This dataset contains variables (columns) about songs (rows) found in the spotify library in 2019.
+
+```{r import data}
+sleep <- read_csv("sleep.csv")
+spotify_songs <- read_csv("spotify_songs.csv")
+```
+
+# Section 1: Sleep Study
+
+## Question 1 - Does Sleep Deprivation Impact Reaction Time?
+
+Write the code required to create this visualization
+
+```{r Question 1}
+sleep%>%
+  filter(Days == 0 | Days == 9)%>%
+  group_by(Group, Days)%>%
+  summarise(mean_reaction = mean(Reaction))%>%
+  ggplot(aes(Days, mean_reaction, color = Group))+
+  geom_point()+
+  geom_line()+
+  labs(x = "Days",
+       y = "Mean Reaction Time (ms)",
+       title = "Sleep Deprivation Increases Reaction Time")
+```
+
+## Question 2 - When Do the Effects of Sleep Deprivation Occur?
+
+Describe a visualization (similar to question 1) that would answer the question: What day does the mean reaction time extend beyond 300 ms for the deprived group? (***Bonus 1 pt*** - write the code required to create the visualization)
+
+```{r}
+sleep%>%
+  group_by(Group, Days)%>%
+  summarise(mean_reaction = mean(Reaction))%>%
+  ggplot(aes(Days, mean_reaction, color = Group))+
+  geom_point()+
+  geom_line()+
+  annotate("text",x = 3, y = 320, label = "Day 5 Greater Than 300")+
+  geom_hline(yintercept = 300)+
+  labs(x = "Days",
+       y = "Mean Reaction Time (ms)",
+       title = "Sleep Deprivation Increases Reaction Time")
+```
+
+# Section 2: Spotify Songs
+
+## Question 3 - R Code in Your Own Words
+
+Describe (in complete sentences and using the terminology we’ve used in class) what the code below does?
+
+```{r}
+spotify_songs%>%
+  filter(year == 2019 & track_popularity>90)%>%
+  select(year, track_popularity, track_name, track_artist, playlist_genre, key)%>%
+  group_by(playlist_genre)%>%
+  summarise(count = n())%>%
+  ggplot(aes(x = fct_reorder(playlist_genre, count), fill = playlist_genre, y = count))+
+  geom_col()+
+  coord_flip()+
+  guides(fill = "none")+
+  labs(y = "Number of Songs with Popularity > 90 in Spotify",
+       x = "Music Genre",
+       title = "Number of Popular Songs from 2019")
+```
+
+## Question 4 - Exploring Acousticness in EDM and Rock Songs
+
+Part 1: Write the code required to describe the relationship between the mean acousticness of songs and year in the edm and rock genre. 
+
+Part 2: Using complete sentences, how has acousticness changed over the years for edm and rock songs? 
+
+
+
+
+
+
+```{r}
+#part 1
+spotify_songs%>%
+  filter(playlist_genre %in% c("edm","rock"))%>%
+  group_by(year, playlist_genre)%>%
+  summarise(mean_acousticness = mean(acousticness))%>%
+  ggplot(aes(year, mean_acousticness, color = playlist_genre))+
+  geom_point()+
+  geom_smooth(method = "lm")+
+  facet_wrap(~playlist_genre)
+
+spotify_songs%>%
+  filter(playlist_genre == "edm"| playlist_genre == "rock")%>%
+  group_by(year)%>%
+  summarise(mean_acousticness = mean(acousticness))%>%
+ggplot(aes(year, mean_acousticness, fill = year))+
+  geom_col()+
+  labs(title = "Relationship between Mean Acousticness and Year for EDM and Rock Songs", x = "Year", y = "Mean Acousticness")+
+  theme(legend.position = "none", plot.title = element_text(size = 9)).
+```
+
+## Question 5 - Are songs getting shorter? 
+
+Part 1: Write the code required to answer the question: Since 2010, are songs getting shorter?
+
+Part 2: In general, are songs from specific playlist_genres getting shorter over time? Write the code required to describe the role playlist_genre has on song duration since 2010. 
+```{r}
+#part 1
+spotify_songs%>%
+  filter(year > 2010)%>%
+  group_by(year)%>%
+  summarise(mean_duration = mean(duration_ms))%>%
+  ggplot(aes(year, mean_duration))+
+  geom_col()
+
+#part 2
+spotify_songs%>%
+  filter(year > 2010)%>%
+  group_by(year, playlist_genre)%>%
+  summarise(mean_duration = mean(duration_ms))%>%
+  ggplot(aes(year, mean_duration, color = playlist_genre))+
+  geom_line()
+```
+
+
+## Question 6 - Write your own exploratory data analysis question
+
+Write an exploratory data analysis question that explores the relationships between the variables popularity, year, and track_artist. 
+
+
+
+
+
+
+## Question 7 - Write the code
+
+Write the code required to answer the question you've poised in question 6. 
+```{r}
+sleep%>%
+  group_by(Days, Group)%>%
+  filter(Group == "Deprived")%>%
+  summarise(Mean_Reaction_Time = mean(Reaction))%>%
+  arrange(desc(Days))
+#DAY 5 
+sleep%>%
+  group_by(Days, Group)%>%
+  filter(Group == "Deprived")%>%
+  summarise(Mean_Reaction_Time = mean(Reaction))%>%
+  ggplot(aes(Days, Mean_Reaction_Time))+
+  geom_segment(aes(x = 0, y = 256.6518, xend = 9, yend = 350.851, ))+
+  geom_point(aes(x = 5, y = 308.5185))+
+  geom_segment(aes(x = 0, y = 261.7222, xend = 9, yend = 270.333))+
+  geom_point(aes(x = 0, y = 256.6518))+
+  geom_point(aes(x = 9, y = 350.851))+
+  geom_point(aes(x = 0, y = 261.7222))+
+  geom_point(aes(x = 9, y = 270.33))+
+   labs(title = "What Day Does the Mean Reaction Time Extend Beyond 300 ms for the Deprived Group", x = "Days", y = "Mean Reaction Time (ms)")
+
+```
+
+
+
+
+
+

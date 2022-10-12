@@ -1,0 +1,45 @@
+---
+title: "Graphic Design with ggplot2"
+subtitle: "Concepts of the {ggplot2} Package Pt. 1"
+author: "Your Name"
+format: html
+---
+
+# Exercise 1
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = TRUE, warning = FALSE, 
+                      dev = "ragg_png", dpi = 300, retina = 1)
+Sys.setlocale("LC_TIME", "C")
+```
+
+## Data import
+
+```{r preparation, warning=FALSE, message=FALSE}
+library(tidyverse)
+
+bikes <- read_csv(
+  "https://raw.githubusercontent.com/z3tt/graphic-design-ggplot2/main/data/london-bikes-custom.csv", 
+  col_types = "Dcfffilllddddc"
+)
+
+bikes$season <- fct_inorder(bikes$season)
+
+bikes
+```
+
+## Temp_feel vs temp
+
+-   Create a scatter plot of temp_feel vs temp.
+
+-   Map the color of the points to clear weather.
+
+-   Map the size of the points to count.
+
+-   Turn the points into diamonds
+
+```{r plot}
+
+```
+
+Add your comments and more code here.

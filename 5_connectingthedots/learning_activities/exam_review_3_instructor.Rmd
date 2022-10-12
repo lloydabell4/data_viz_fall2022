@@ -29,7 +29,7 @@ Let's start by creating a list of schools for our visualizations. What schools w
 colleges <- c()
 ```
 
-### *Basic Exploratory Data Analysis*  
+### *Basic Exploratory Data Analysis*
 
 *The Question*
 
