@@ -1,0 +1,251 @@
+---
+title: "Data Wrangling"
+author:
+- name: Andrew Bell
+date: "2022"
+output:
+  pdf_document: default
+  html_document: default
+description: |
+  Building Analysis Workflows
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(janitor)
+```
+
+![](images/huum-r5CSRlVOp3U-unsplash.jpg)
+
+## Learning Objectives
+
+-   Understand how to use spreadsheets within R
+-   Be able to identify what is and isn't 'tidy data'
+-   Learn how to manipulate data to make it tidy
+
+## Spreadsheets
+
+So far we've explored importing data from plain text files, e.g. .csv. Sometimes you need to analyze data that lives in a spreadsheet. In this chapter we will introduce you to tools for working with data in Excel spreadsheets.
+
+### Basic Imports from Excel
+
+The *readxl* package is a non-core tidyverse package so you need to load every time you want to use it but it is automatically installed with the tidyverse package.
+
+```{r}
+library(readxl)
+```
+
+The readxl has three functions that import different kinds of Excel spreadsheets
+
+-   [`read_xls()`](https://readxl.tidyverse.org/reference/read_excel.html) reads Excel files with `xls` format.
+
+-   [`read_xlsx()`](https://readxl.tidyverse.org/reference/read_excel.html) read Excel files with `xlsx` format.
+
+-   [`read_excel()`](https://readxl.tidyverse.org/reference/read_excel.html) can read files with both `xls` and `xlsx` format. It guesses the file type based on the input.
+
+```{r}
+roster_raw <- read_excel("data/dirty_data.xlsx")
+```
+
+### Using the Janitor Package to 'clean' messy spreadsheets
+
+\*from the Janitor documentation
+
+### Cleaning dirty data
+
+Take this roster of teachers at a fictional American high school, stored in the Microsoft Excel file [dirty_data.xlsx](https://github.com/sfirke/janitor/blob/master/dirty_data.xlsx):[![All kinds of dirty.](https://github.com/sfirke/janitor/raw/main/man/figures/dirty_data.PNG)](https://github.com/sfirke/janitor/blob/main/man/figures/dirty_data.PNG)
+
+Dirtiness includes:
+
+-   A header at the top
+
+-   Dreadful column names
+
+-   Rows and columns containing Excel formatting but no data
+
+-   Dates in two different formats in a single column (MM/DD/YYYY and numbers)
+
+-   Values spread inconsistently over the "Certification" columns
+
+*Cleaning column names and Identifying Header Row* Name cleaning comes in two flavors. 1) make_clean_names() operates on character vectors and can be used during data import:
+
+```{r}
+roster_raw_cleaner <- read_excel("data/dirty_data.xlsx", 
+                                 skip = 1,
+                                 .name_repair = make_clean_names)
+```
+
+2)  Using clean_names() within a piped workflow
+
+```{r}
+roster_clean <- roster_raw %>%
+  row_to_names(row_number = 1)%>%
+  clean_names()
+```
+
+### Other types of data
+
+While most researchers start with .csv or .xlsx files, some may want to import SPSS, Stata and / or SAS files. The tidyverse package contains the ***haven*** package for those types of data imports. The three most commonly used functions from the ***haven*** package are:
+
+-   **SAS**: [`read_sas()`](https://haven.tidyverse.org/reference/read_sas.html) reads `.sas7bdat` + `.sas7bcat` files and [`read_xpt()`](https://haven.tidyverse.org/reference/read_xpt.html) reads SAS transport files (version 5 and version 8).
+-   **SPSS**: [`read_sav()`](https://haven.tidyverse.org/reference/read_spss.html) reads `.sav` files and [`read_por()`](https://haven.tidyverse.org/reference/read_spss.html) reads the older `.por` files. [`write_sav()`](https://haven.tidyverse.org/reference/read_spss.html) writes `.sav` files.
+-   **Stata**: [`read_dta()`](https://haven.tidyverse.org/reference/read_dta.html) reads `.dta` files (up to version 15). [`write_dta()`](https://haven.tidyverse.org/reference/read_dta.html) writes `.dta` files (versions 8-15).
+
+Use the ? to learn more about the syntax of using the ***haven*** package
+
+```{r}
+?haven()
+```
+
+## Tidy Data
+
+The power of ggplot and dplyr are only realized when given tidy data. Data can be represented in multiple ways. Check out the ways the same data is represented below.
+
+```{r}
+datatable(table1)
+
+datatable(table2)
+
+table3
+
+#spread across two tibbles
+table4a
+table4b
+```
+
+(taken from r4ds chapter 12) These are all representations of the same underlying data, but they are not equally easy to use. One dataset, the tidy dataset, will be much easier to work with inside the tidyverse.
+
+There are three interrelated rules which make a dataset tidy:
+
+1.  Each variable must have its own column.
+
+2.  Each observation must have its own row.
+
+3.  Each value must have its own cell.
+
+Figure [12.1](https://r4ds.had.co.nz/tidy-data.html#fig:tidy-structure) shows the rules visually.
+
+![Following three rules makes a dataset tidy: variables are in columns, observations are in rows, and values are in cells.](https://d33wubrfki0l68.cloudfront.net/6f1ddb544fc5c69a2478e444ab8112fb0eea23f8/91adc/images/tidy-1.png)
+
+Figure 12.1: Following three rules makes a dataset tidy: variables are in columns, observations are in rows, and values are in cells.
+
+**Determine what is tidy and what is not**
+
+Look back at the tables above, which are tidy and which are not?
+
+How could you compute the rate per 10,000 people? How many cases occurred each year?
+
+These are simple questions but only when the tidy is data can we easily compute the solution.
+
+```{r}
+# Compute rate per 10,000
+table1 %>% 
+  mutate(rate = cases / population * 10000)
+
+# Compute cases per year
+table1 %>% 
+  count(year, wt = cases)
+```
+
+### Pivoting
+
+Many times data will arrive untidy - one variable might be spread across multiple columns or one observation might be scattered across multiple rows. To deal with these issues, you will want to pivot the data either longer or wider.
+
+#### Longer
+
+A common problem is a dataset where some of the column names are not names of variables, but values of a variable. Take table4a: the column names 1999 and 2000 represent values of the year variable, the values in the 1999 and 2000 columns represent values of the cases variable, and each row represents two observations, not one.
+
+```{r}
+table4a
+```
+
+To tidy a dataset like this, we need to pivot the offending columns into a new pair of variables. To describe that operation we need three parameters:
+
+-   The set of columns whose names are values, not variables. In this example, those are the columns 1999 and 2000.
+-   The name of the variable to move the column names to. Here it is year.
+-   The name of the variable to move the column values to. Here it's cases.
+
+Together those parameters generate the call to pivot_longer():
+
+```{r}
+table4a %>% 
+  pivot_longer(c(`1999`, `2000`), names_to = "year", values_to = "cases")
+```
+
+![Pivoting \`table4\` into a longer, tidy form.](https://d33wubrfki0l68.cloudfront.net/3aea19108d39606bbe49981acda07696c0c7fcd8/2de65/images/tidy-9.png)
+
+Figure Pivoting `table4` into a longer, tidy form.
+
+#### Wider
+
+pivot_wider() is the opposite of pivot_longer(). You use it when an observation is scattered across multiple rows. For example, take table2: an observation is a country in a year, but each observation is spread across two rows.
+
+```{r}
+table2
+```
+
+To tidy this up, we first analyse the representation in similar way to pivot_longer(). This time, however, we only need two parameters:
+
+The column to take variable names from. Here, it's type.
+
+The column to take values from. Here it's count.
+
+Once we've figured that out, we can use pivot_wider(), as shown programmatically below, and visually in Figure wider.
+
+```{r}
+table2 %>%
+    pivot_wider(names_from = type, values_from = count)
+```
+
+![Pivoting \`table2\` into a "wider", tidy form.](https://d33wubrfki0l68.cloudfront.net/8350f0dda414629b9d6c354f87acf5c5f722be43/bcb84/images/tidy-8.png)
+
+Figure wider: Pivoting `table2` into a "wider", tidy form.
+
+## Exercise: Data Wrangling
+
+**untidy_1**
+
+untidy_1 is a dataset from a fictional study exploring the role of multiple factors (blood type, dsm type, and age) on cortisol levels after a stressful event.
+
+For this exercise:
+
+1)  Explore the dataset untidy_1.csv and determine how to make it tidy
+
+2)  Write the code required to tidy the data
+
+3)  Determine the mean cortisol levels for each trial by DSM type.
+
+```{r}
+
+```
+
+**untidy_2**
+
+untidy_2 is a dataset from a fictional sociological study (with fictional numbers) looking at the number of law suits over time.
+
+For this exercise:
+
+1)  Explore the dataset untidy_2.csv and determine how to make it tidy
+
+2)  Write the code required to tidy the date
+
+3)  Determine the mean number of law suits for countries whose GDP is greater than 1 trillion.
+
+```{r}
+#untidy_2 exercise
+```
+
+**your_data**
+
+1)  Upload your data into your data folder and import the data into your environment.
+
+2)  Determine whether your data is tidy. If not, write the code required to tidy it.
+
+3)  Create one summary table from your data
+
+4)  Create a visualization based on your data that looks at one or more variables.
+
+```{r}
+#your_data exercise
+```

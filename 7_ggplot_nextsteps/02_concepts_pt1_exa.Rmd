@@ -17,7 +17,7 @@ Sys.setlocale("LC_TIME", "C")
 
 ```{r preparation, warning=FALSE, message=FALSE}
 library(tidyverse)
-
+#install.packages("evaluate")
 bikes <- read_csv(
   "https://raw.githubusercontent.com/z3tt/graphic-design-ggplot2/main/data/london-bikes-custom.csv", 
   col_types = "Dcfffilllddddc"
@@ -39,7 +39,8 @@ bikes
 -   Turn the points into diamonds
 
 ```{r plot}
-
+ggplot(bikes, aes(x = temp, y = temp_feel))+
+         geom_point()
 ```
 
 Add your comments and more code here.
