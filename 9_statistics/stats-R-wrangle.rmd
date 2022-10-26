@@ -1,0 +1,37 @@
+---
+title: "Edge cases"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+library(readxl)
+library(here)
+```
+
+```{r}
+
+all_data <- list.files(here("real_life_data"), pattern = "*.csv") %>% 
+    map_df(~read_csv(here("real_life_data", .)))
+```
+
+
+```{r}
+raw_df <- read_csv("simple_data/combo_treat.csv")
+```
+
+
+
+```{r}
+raw_df
+```
+
+```{r}
+raw_df %>% 
+  separate(health_drug, sep = "_", into = c("health_status", "treatment"))
+```
+

@@ -1,0 +1,601 @@
+age,sex,mmse,health_drug
+80,0,24.7898757294475,Healthy_Placebo
+85,0,24.881922782358,Healthy_Placebo
+82,0,25.1090341667271,Healthy_Placebo
+80,0,24.9263624503099,Healthy_Placebo
+83,0,23.3884501324994,Healthy_Placebo
+79,0,24.1138958025632,Healthy_Placebo
+82,0,28.2032733410796,Healthy_Placebo
+79,0,26.9395881628318,Healthy_Placebo
+80,1,27.0740680559964,Healthy_Placebo
+79,0,24.4035043846296,Healthy_Placebo
+80,0,25.5046175020706,Healthy_Placebo
+79,1,26.1466531136342,Healthy_Placebo
+81,0,24.7708719059436,Healthy_Placebo
+83,1,24.4835505067031,Healthy_Placebo
+85,1,24.1827220668921,Healthy_Placebo
+81,0,27.6822377356971,Healthy_Placebo
+83,1,22.5995889631964,Healthy_Placebo
+85,0,23.4548294895484,Healthy_Placebo
+80,0,23.8560985601838,Healthy_Placebo
+80,1,24.7125730648372,Healthy_Placebo
+80,0,23.3000789137782,Healthy_Placebo
+85,0,25.5853814607848,Healthy_Placebo
+80,1,23.7800186466583,Healthy_Placebo
+83,0,23.6234248994184,Healthy_Placebo
+80,0,24.7783914598344,Healthy_Placebo
+82,0,25.2143474462921,Healthy_Placebo
+82,1,25.3450546677284,Healthy_Placebo
+84,0,26.2124554624955,Healthy_Placebo
+81,1,26.4934785988297,Healthy_Placebo
+81,1,27.8798504232144,Healthy_Placebo
+80,1,26.5740253414479,Healthy_Placebo
+82,1,24.5075841546988,Healthy_Placebo
+79,0,26.8790930136723,Healthy_Placebo
+81,1,23.7087076754018,Healthy_Placebo
+79,0,25.2969339238352,Healthy_Placebo
+84,0,25.0496368812432,Healthy_Placebo
+85,1,28.782618827845,Healthy_Placebo
+85,0,26.4585390201347,Healthy_Placebo
+82,0,24.2505061993126,Healthy_Placebo
+79,0,24.4250726938722,Healthy_Placebo
+85,0,23.6778820523577,Healthy_Placebo
+82,1,22.2928272644201,Healthy_Placebo
+85,1,23.3058611646072,Healthy_Placebo
+84,0,23.4909210268678,Healthy_Placebo
+84,1,22.1484156980334,Healthy_Placebo
+85,1,26.0128669421659,Healthy_Placebo
+79,0,24.5681960585279,Healthy_Placebo
+84,0,24.5332103751366,Healthy_Placebo
+80,1,26.7340456465974,Healthy_Placebo
+85,1,23.6578916879782,Healthy_Placebo
+83,0,22.3141993310651,Healthy_Placebo
+83,0,23.8421141215635,Healthy_Placebo
+82,0,25.7997587994896,Healthy_Placebo
+84,1,26.2677148193097,Healthy_Placebo
+80,1,24.5891353572652,Healthy_Placebo
+83,1,24.4900428706888,Healthy_Placebo
+83,0,25.0301549813202,Healthy_Placebo
+82,1,26.211991838037,Healthy_Placebo
+83,0,21.9403535204277,Healthy_Placebo
+81,1,26.0978728527968,Healthy_Placebo
+83,0,28.1133627120118,Healthy_Placebo
+84,0,22.0467192431737,Healthy_Placebo
+85,0,24.8301817903221,Healthy_Placebo
+85,1,24.606633902616,Healthy_Placebo
+80,0,26.244783068349,Healthy_Placebo
+83,0,25.885090969828,Healthy_Placebo
+80,0,23.3818937986046,Healthy_Placebo
+81,1,25.0598079418092,Healthy_Placebo
+79,0,26.5245393886272,Healthy_Placebo
+83,1,22.5467557037793,Healthy_Placebo
+84,0,27.7591856806797,Healthy_Placebo
+80,0,24.6511988774769,Healthy_Placebo
+79,0,22.9663322568317,Healthy_Placebo
+85,1,23.9998196854611,Healthy_Placebo
+85,1,24.9083843142131,Healthy_Placebo
+84,1,23.3357119930418,Healthy_Placebo
+82,0,24.634147823243,Healthy_Placebo
+79,1,24.6048836904884,Healthy_Placebo
+84,1,26.5691840491313,Healthy_Placebo
+85,1,26.254187069804,Healthy_Placebo
+83,0,22.9258671442738,Healthy_Placebo
+85,0,25.7546511367387,Healthy_Placebo
+79,1,26.0063838757291,Healthy_Placebo
+84,1,25.5883621108005,Healthy_Placebo
+85,1,24.5793849902452,Healthy_Placebo
+83,1,26.7948159548108,Healthy_Placebo
+82,1,24.3664165555196,Healthy_Placebo
+80,1,23.8186140635692,Healthy_Placebo
+79,1,23.1249254611195,Healthy_Placebo
+85,1,26.7776690649579,Healthy_Placebo
+79,1,25.7586315203948,Healthy_Placebo
+82,0,26.8551548727779,Healthy_Placebo
+81,0,25.7836951354077,Healthy_Placebo
+79,1,23.337104400067,Healthy_Placebo
+80,1,22.6185607675362,Healthy_Placebo
+79,1,23.9524751175957,Healthy_Placebo
+79,1,25.6307239254808,Healthy_Placebo
+83,0,25.5945305708496,Healthy_Placebo
+79,0,23.9838427257686,Healthy_Placebo
+81,0,25.1569810714692,Healthy_Placebo
+80,0,24.4802248226566,Healthy_Low dose
+79,0,27.3595116570684,Healthy_Low dose
+83,0,25.4072532606378,Healthy_Low dose
+85,1,23.6166448707275,Healthy_Low dose
+84,0,24.9042356478761,Healthy_Low dose
+79,0,24.1126599218866,Healthy_Low dose
+84,1,24.1998897774011,Healthy_Low dose
+84,1,25.7176129453105,Healthy_Low dose
+83,0,23.4661026369008,Healthy_Low dose
+81,0,23.9676381034556,Healthy_Low dose
+81,0,23.0655883801098,Healthy_Low dose
+81,0,25.1098463904274,Healthy_Low dose
+84,1,26.7038573158724,Healthy_Low dose
+80,0,23.8273801929302,Healthy_Low dose
+84,1,25.1675867045153,Healthy_Low dose
+83,1,26.6657505104138,Healthy_Low dose
+83,0,24.3033453578196,Healthy_Low dose
+84,0,24.8109450226496,Healthy_Low dose
+84,0,24.4325971751144,Healthy_Low dose
+81,1,23.9551397976599,Healthy_Low dose
+85,0,23.1061907585473,Healthy_Low dose
+79,1,24.6670870205438,Healthy_Low dose
+80,0,25.6658698733775,Healthy_Low dose
+85,0,24.9255871071137,Healthy_Low dose
+81,1,25.6387757186882,Healthy_Low dose
+81,1,24.7699866547934,Healthy_Low dose
+85,0,25.1600928700339,Healthy_Low dose
+84,0,26.8463796405324,Healthy_Low dose
+81,0,24.9245972277626,Healthy_Low dose
+82,0,23.6539934026344,Healthy_Low dose
+85,1,26.8102867339818,Healthy_Low dose
+79,1,27.8809152744109,Healthy_Low dose
+83,1,21.9155786752128,Healthy_Low dose
+84,1,25.7190166317773,Healthy_Low dose
+81,0,25.3627623760472,Healthy_Low dose
+81,1,23.8051499342003,Healthy_Low dose
+79,1,27.3349874835142,Healthy_Low dose
+85,1,28.0367432830347,Healthy_Low dose
+79,1,24.2481415332684,Healthy_Low dose
+80,0,25.5936711325823,Healthy_Low dose
+81,1,24.7444933709512,Healthy_Low dose
+81,0,25.2558455679549,Healthy_Low dose
+80,0,27.6706747426748,Healthy_Low dose
+79,1,25.842379285117,Healthy_Low dose
+80,1,26.7249642120611,Healthy_Low dose
+83,0,24.8670532744864,Healthy_Low dose
+80,0,25.3441487613768,Healthy_Low dose
+79,1,25.990097245618,Healthy_Low dose
+83,0,24.9799640312079,Healthy_Low dose
+83,0,23.4408499332861,Healthy_Low dose
+84,0,26.443728041226,Healthy_Low dose
+84,0,23.1153438115251,Healthy_Low dose
+83,1,24.2212521425528,Healthy_Low dose
+79,0,24.8341875442428,Healthy_Low dose
+80,1,26.3497017748336,Healthy_Low dose
+81,0,24.7634590410982,Healthy_Low dose
+79,1,23.4188875332863,Healthy_Low dose
+85,1,26.6868054519399,Healthy_Low dose
+81,1,23.7718280031959,Healthy_Low dose
+81,0,26.9007213566948,Healthy_Low dose
+79,1,22.6302886025151,Healthy_Low dose
+85,0,24.530721589078,Healthy_Low dose
+85,0,24.1947917765611,Healthy_Low dose
+85,1,26.4565715911481,Healthy_Low dose
+85,0,21.9359797610671,Healthy_Low dose
+79,1,25.3427055323056,Healthy_Low dose
+84,1,27.3508317228093,Healthy_Low dose
+84,0,25.7185698214763,Healthy_Low dose
+81,1,26.7297787480658,Healthy_Low dose
+83,1,23.2541920770406,Healthy_Low dose
+84,1,22.7407430903204,Healthy_Low dose
+83,1,24.0822440965366,Healthy_Low dose
+80,0,24.8992582060998,Healthy_Low dose
+81,1,23.7706319012994,Healthy_Low dose
+81,0,26.4378745585203,Healthy_Low dose
+81,1,26.4209238931333,Healthy_Low dose
+81,0,27.2102809903853,Healthy_Low dose
+82,1,23.2719649160955,Healthy_Low dose
+82,0,22.0132612335746,Healthy_Low dose
+84,0,25.3836009599068,Healthy_Low dose
+84,1,24.8998159665431,Healthy_Low dose
+81,1,24.1393043363011,Healthy_Low dose
+82,1,25.0520654854364,Healthy_Low dose
+81,1,24.4219898110364,Healthy_Low dose
+82,0,24.8616812196288,Healthy_Low dose
+79,1,24.7120005509269,Healthy_Low dose
+84,1,25.0987221241543,Healthy_Low dose
+82,0,21.5779108863454,Healthy_Low dose
+81,1,23.7202084472045,Healthy_Low dose
+81,1,22.1873931992195,Healthy_Low dose
+85,0,26.0816996386275,Healthy_Low dose
+84,0,25.977400532424902,Healthy_Low dose
+80,0,25.996139718667,Healthy_Low dose
+84,1,23.7454656878933,Healthy_Low dose
+85,1,24.2261527051798,Healthy_Low dose
+84,0,24.0228898738458,Healthy_Low dose
+80,0,24.5794984424005,Healthy_Low dose
+85,0,27.9551428159219,Healthy_Low dose
+79,1,24.7780711278632,Healthy_Low dose
+83,0,26.3336764200086,Healthy_Low dose
+85,1,25.4646315521493,Healthy_High Dose
+82,1,25.5284270856986,Healthy_High Dose
+84,0,26.0597871670414,Healthy_High Dose
+79,1,25.8284016651515,Healthy_High Dose
+80,1,25.7889864903757,Healthy_High Dose
+80,1,25.6971593022457,Healthy_High Dose
+81,0,25.8791205421019,Healthy_High Dose
+81,0,23.8624955057273,Healthy_High Dose
+80,0,25.3343276198956,Healthy_High Dose
+84,1,25.8477491126928,Healthy_High Dose
+80,1,25.1860993143064,Healthy_High Dose
+83,1,26.6508335853681,Healthy_High Dose
+85,0,25.1078795497226,Healthy_High Dose
+83,1,23.7470563306697,Healthy_High Dose
+80,0,24.8296396303433,Healthy_High Dose
+83,0,25.3327239209413,Healthy_High Dose
+79,0,27.0449492550876,Healthy_High Dose
+83,0,28.3538969211117,Healthy_High Dose
+80,1,26.0448873270272,Healthy_High Dose
+83,1,24.7173329492901,Healthy_High Dose
+85,0,26.9104559694507,Healthy_High Dose
+82,1,24.5063033260117,Healthy_High Dose
+85,1,25.5091384454546,Healthy_High Dose
+84,1,25.5694403137363,Healthy_High Dose
+81,0,24.6657878133788,Healthy_High Dose
+83,0,26.761420584346,Healthy_High Dose
+79,0,25.7102917497303,Healthy_High Dose
+81,0,24.410776952058,Healthy_High Dose
+82,1,26.4225664996526,Healthy_High Dose
+81,0,26.0261626825361,Healthy_High Dose
+82,0,27.5479309872398,Healthy_High Dose
+84,0,26.1428655894653,Healthy_High Dose
+84,0,25.0309338987604,Healthy_High Dose
+79,0,25.7480943382588,Healthy_High Dose
+79,1,24.9417120753419,Healthy_High Dose
+82,1,26.2478165344628,Healthy_High Dose
+80,0,26.0504791314699,Healthy_High Dose
+84,1,23.9422448489453,Healthy_High Dose
+83,1,24.3760784723559,Healthy_High Dose
+83,0,25.7401033047636,Healthy_High Dose
+81,1,25.9081174062964,Healthy_High Dose
+84,1,25.8416752497488,Healthy_High Dose
+80,0,23.8144496700492,Healthy_High Dose
+85,0,25.8552459411754,Healthy_High Dose
+80,0,27.3045314590082,Healthy_High Dose
+80,0,25.3811496550686,Healthy_High Dose
+81,1,28.1188598068334,Healthy_High Dose
+81,1,25.1381967594181,Healthy_High Dose
+85,0,25.4487663983509,Healthy_High Dose
+82,0,24.2822611292851,Healthy_High Dose
+82,1,25.2821659746866,Healthy_High Dose
+85,0,26.0217240252471,Healthy_High Dose
+83,0,23.627544670518,Healthy_High Dose
+82,1,22.9948984882083,Healthy_High Dose
+79,1,26.9045702342337,Healthy_High Dose
+84,1,24.6756193190608,Healthy_High Dose
+84,1,24.8388415750255,Healthy_High Dose
+84,1,23.0352013909915,Healthy_High Dose
+85,1,26.3766850720221,Healthy_High Dose
+84,1,26.4656999494872,Healthy_High Dose
+79,1,25.7088745399292,Healthy_High Dose
+83,0,26.9985757268282,Healthy_High Dose
+81,0,25.3388167781884,Healthy_High Dose
+84,0,23.4582724998322,Healthy_High Dose
+83,0,24.9963038150614,Healthy_High Dose
+82,0,26.4602070356662,Healthy_High Dose
+85,0,24.7580198150046,Healthy_High Dose
+83,0,26.2099733538293,Healthy_High Dose
+85,0,25.0187394047009,Healthy_High Dose
+79,0,25.0132113024973,Healthy_High Dose
+79,1,24.5290940740823,Healthy_High Dose
+81,0,28.2065377800899,Healthy_High Dose
+80,1,25.6260936884467,Healthy_High Dose
+81,0,26.1559931897684,Healthy_High Dose
+81,1,26.2793275497539,Healthy_High Dose
+84,1,24.4996098659022,Healthy_High Dose
+85,0,25.2358421827488,Healthy_High Dose
+81,1,24.435115365184,Healthy_High Dose
+85,0,25.372791685831,Healthy_High Dose
+84,1,25.9678659358166,Healthy_High Dose
+82,0,25.3862549254236,Healthy_High Dose
+83,0,26.7790695462656,Healthy_High Dose
+80,1,25.3337481142791,Healthy_High Dose
+81,0,26.3396689312146,Healthy_High Dose
+85,1,24.6539074534413,Healthy_High Dose
+85,1,24.7907091596141,Healthy_High Dose
+81,1,25.8032238887122,Healthy_High Dose
+80,0,26.0658091713561,Healthy_High Dose
+85,0,26.184065186992,Healthy_High Dose
+82,1,25.4095780110815,Healthy_High Dose
+83,1,25.2935031865245,Healthy_High Dose
+80,1,25.1190659503014,Healthy_High Dose
+83,1,26.1835301792698,Healthy_High Dose
+79,0,25.6719792660693,Healthy_High Dose
+83,1,25.684803635032,Healthy_High Dose
+81,0,25.3307095851116,Healthy_High Dose
+83,1,24.4993891205437,Healthy_High Dose
+80,0,25.1941159893443,Healthy_High Dose
+81,0,26.6512333093915,Healthy_High Dose
+81,1,25.6121693954224,Healthy_High Dose
+79,0,10.2268563650679,Alzheimer's_Placebo
+79,1,14.2897196826213,Alzheimer's_Placebo
+79,0,10.8443056546738,Alzheimer's_Placebo
+83,0,13.3097825919758,Alzheimer's_Placebo
+80,1,12.7911574661162,Alzheimer's_Placebo
+84,1,11.7046909451228,Alzheimer's_Placebo
+83,0,9.21322124400476,Alzheimer's_Placebo
+79,1,10.3673152057746,Alzheimer's_Placebo
+83,1,8.53665936375875,Alzheimer's_Placebo
+84,0,10.6416331058908,Alzheimer's_Placebo
+81,0,14.0480804108031,Alzheimer's_Placebo
+79,1,9.87202004843289,Alzheimer's_Placebo
+79,0,13.0300135953075,Alzheimer's_Placebo
+80,0,12.3378429707862,Alzheimer's_Placebo
+83,1,12.3609834728902,Alzheimer's_Placebo
+85,1,10.1634931015185,Alzheimer's_Placebo
+82,0,12.3474499253411,Alzheimer's_Placebo
+79,0,10.8508077662913,Alzheimer's_Placebo
+79,1,10.0588291845122,Alzheimer's_Placebo
+82,1,14.6146438779792,Alzheimer's_Placebo
+83,0,12.6976059357582,Alzheimer's_Placebo
+85,0,13.3476311027003,Alzheimer's_Placebo
+81,0,9.09100194580395,Alzheimer's_Placebo
+80,0,11.8307261198643,Alzheimer's_Placebo
+85,1,8.37578058116425,Alzheimer's_Placebo
+82,0,14.9811616062093,Alzheimer's_Placebo
+80,0,9.58561315295987,Alzheimer's_Placebo
+85,0,10.8511696045819,Alzheimer's_Placebo
+84,1,14.4727379024376,Alzheimer's_Placebo
+80,1,9.68165648625826,Alzheimer's_Placebo
+83,0,10.8777822701905,Alzheimer's_Placebo
+80,0,13.4223451522919,Alzheimer's_Placebo
+81,0,11.5468883581443,Alzheimer's_Placebo
+83,0,13.4303039610646,Alzheimer's_Placebo
+84,1,11.8589868895767,Alzheimer's_Placebo
+83,1,13.0402830352955,Alzheimer's_Placebo
+81,1,13.1343461555263,Alzheimer's_Placebo
+85,0,10.5629697582749,Alzheimer's_Placebo
+84,1,11.9278366161942,Alzheimer's_Placebo
+85,1,11.3153151599533,Alzheimer's_Placebo
+81,1,10.7962485974508,Alzheimer's_Placebo
+85,1,9.51925266751026,Alzheimer's_Placebo
+84,0,12.6706261689513,Alzheimer's_Placebo
+79,1,14.5463772107981,Alzheimer's_Placebo
+81,0,11.7538511117587,Alzheimer's_Placebo
+83,0,13.5130416461136,Alzheimer's_Placebo
+79,0,11.5485395840509,Alzheimer's_Placebo
+83,1,13.2010952502924,Alzheimer's_Placebo
+82,1,11.0200346053197,Alzheimer's_Placebo
+81,0,8.91408469576153,Alzheimer's_Placebo
+79,0,9.24217745164547,Alzheimer's_Placebo
+79,1,14.0368107436432,Alzheimer's_Placebo
+79,1,15.7286958028927,Alzheimer's_Placebo
+85,1,13.4652954585503,Alzheimer's_Placebo
+80,0,10.5800827360915,Alzheimer's_Placebo
+79,1,13.5846271649194,Alzheimer's_Placebo
+84,0,13.3621862536505,Alzheimer's_Placebo
+79,1,11.0675140053905,Alzheimer's_Placebo
+80,0,13.3277466065022,Alzheimer's_Placebo
+79,1,14.0219545002467,Alzheimer's_Placebo
+83,0,14.0260911039752,Alzheimer's_Placebo
+82,0,14.4364827176952,Alzheimer's_Placebo
+81,1,9.56120641419123,Alzheimer's_Placebo
+81,1,11.839576452431,Alzheimer's_Placebo
+81,0,11.3027079769874,Alzheimer's_Placebo
+79,1,12.9660988910321,Alzheimer's_Placebo
+81,1,11.6717089591045,Alzheimer's_Placebo
+82,0,11.0562635408654,Alzheimer's_Placebo
+83,1,13.2058305473162,Alzheimer's_Placebo
+83,1,11.4378041250758,Alzheimer's_Placebo
+85,0,16.1980530825783,Alzheimer's_Placebo
+81,1,11.1428162846425,Alzheimer's_Placebo
+80,1,10.5722636371372,Alzheimer's_Placebo
+84,1,10.2760098952179,Alzheimer's_Placebo
+83,0,11.7949551085296,Alzheimer's_Placebo
+79,0,10.673188156585,Alzheimer's_Placebo
+81,1,12.728799539486,Alzheimer's_Placebo
+79,1,12.951314538092,Alzheimer's_Placebo
+80,0,9.69895976210067,Alzheimer's_Placebo
+84,0,13.4397623178198,Alzheimer's_Placebo
+84,1,12.2376383160514,Alzheimer's_Placebo
+82,1,10.1783114127726,Alzheimer's_Placebo
+81,0,15.3462902885033,Alzheimer's_Placebo
+85,1,15.0714886099309,Alzheimer's_Placebo
+80,1,10.3598561540553,Alzheimer's_Placebo
+85,1,12.1942350582678,Alzheimer's_Placebo
+81,1,10.4931397396818,Alzheimer's_Placebo
+79,0,13.3170911636645,Alzheimer's_Placebo
+83,1,13.3408709919908,Alzheimer's_Placebo
+79,0,12.3981337902761,Alzheimer's_Placebo
+79,0,15.2890033081226,Alzheimer's_Placebo
+84,0,11.8337985600715,Alzheimer's_Placebo
+83,1,10.4688722688006,Alzheimer's_Placebo
+84,0,11.5468043173616,Alzheimer's_Placebo
+79,0,12.9573367068575,Alzheimer's_Placebo
+81,0,12.4278200355294,Alzheimer's_Placebo
+80,0,11.2789447575241,Alzheimer's_Placebo
+85,0,14.6361502759343,Alzheimer's_Placebo
+80,0,10.9099345772977,Alzheimer's_Placebo
+81,0,12.0914873533949,Alzheimer's_Placebo
+85,1,15.9063448566942,Alzheimer's_Low dose
+82,1,15.3197931642314,Alzheimer's_Low dose
+84,1,12.098204789549,Alzheimer's_Low dose
+81,0,14.7165005221129,Alzheimer's_Low dose
+81,1,14.8208430903797,Alzheimer's_Low dose
+82,0,13.0800303228114,Alzheimer's_Low dose
+85,0,13.0301263038836,Alzheimer's_Low dose
+81,1,17.6944187992856,Alzheimer's_Low dose
+79,0,16.2172414616705,Alzheimer's_Low dose
+79,1,15.8378628411152,Alzheimer's_Low dose
+79,0,15.2295155063792,Alzheimer's_Low dose
+85,0,12.5465840873748,Alzheimer's_Low dose
+85,1,15.0038047587915,Alzheimer's_Low dose
+83,1,15.0826658837796,Alzheimer's_Low dose
+82,0,14.9841121177045,Alzheimer's_Low dose
+81,1,14.171503433512,Alzheimer's_Low dose
+84,0,14.4286194377352,Alzheimer's_Low dose
+82,0,15.1291100639471,Alzheimer's_Low dose
+79,0,12.5615526988322,Alzheimer's_Low dose
+80,1,15.0865919776599,Alzheimer's_Low dose
+79,1,16.8359647222701,Alzheimer's_Low dose
+83,0,16.0774573397627,Alzheimer's_Low dose
+82,1,18.0888348694038,Alzheimer's_Low dose
+81,1,13.8228928545007,Alzheimer's_Low dose
+82,1,15.5838135620749,Alzheimer's_Low dose
+85,1,16.611466071098,Alzheimer's_Low dose
+81,0,14.0928296150788,Alzheimer's_Low dose
+80,0,14.5523818958715,Alzheimer's_Low dose
+82,0,13.7724999457886,Alzheimer's_Low dose
+80,0,12.045266781094,Alzheimer's_Low dose
+79,0,17.5576082204938,Alzheimer's_Low dose
+85,1,14.6578044034531,Alzheimer's_Low dose
+84,0,12.4944125549822,Alzheimer's_Low dose
+81,0,16.3100332773634,Alzheimer's_Low dose
+80,1,13.2569160140889,Alzheimer's_Low dose
+84,1,15.3913332765747,Alzheimer's_Low dose
+83,0,13.1104956505568,Alzheimer's_Low dose
+82,1,15.6712410990337,Alzheimer's_Low dose
+79,1,16.9020278081221,Alzheimer's_Low dose
+82,1,16.3746167020591,Alzheimer's_Low dose
+79,0,12.928991499164,Alzheimer's_Low dose
+83,1,15.1646111096932,Alzheimer's_Low dose
+79,1,13.952501212397,Alzheimer's_Low dose
+84,0,13.7412245549625,Alzheimer's_Low dose
+81,0,15.2234303601677,Alzheimer's_Low dose
+85,0,15.7425583306262,Alzheimer's_Low dose
+80,0,15.9631216682998,Alzheimer's_Low dose
+82,1,15.1557843376377,Alzheimer's_Low dose
+83,0,12.7085477574281,Alzheimer's_Low dose
+80,1,13.3091192216548,Alzheimer's_Low dose
+79,0,14.3259286542437,Alzheimer's_Low dose
+84,1,16.8060608088285,Alzheimer's_Low dose
+81,0,14.9550890792697,Alzheimer's_Low dose
+85,0,17.5823388702108,Alzheimer's_Low dose
+84,1,16.8090813964733,Alzheimer's_Low dose
+81,0,15.822382371265,Alzheimer's_Low dose
+85,1,13.76092761866,Alzheimer's_Low dose
+84,1,13.3183437853848,Alzheimer's_Low dose
+85,1,17.3260662382276,Alzheimer's_Low dose
+83,0,12.2665836145142,Alzheimer's_Low dose
+79,0,16.3988680384238,Alzheimer's_Low dose
+82,0,13.5003761487629,Alzheimer's_Low dose
+79,0,15.8892266896037,Alzheimer's_Low dose
+84,1,14.0681168774568,Alzheimer's_Low dose
+82,0,14.4039026251726,Alzheimer's_Low dose
+81,1,15.448875990698,Alzheimer's_Low dose
+83,1,14.7044912217238,Alzheimer's_Low dose
+82,0,15.7361336164487,Alzheimer's_Low dose
+84,1,15.0544985205221,Alzheimer's_Low dose
+81,1,17.088498384347,Alzheimer's_Low dose
+79,1,16.8859813367409,Alzheimer's_Low dose
+84,1,14.5052178332735,Alzheimer's_Low dose
+84,1,14.3042720042097,Alzheimer's_Low dose
+84,0,12.6940537993722,Alzheimer's_Low dose
+84,0,15.4279248040515,Alzheimer's_Low dose
+80,1,16.2688873768386,Alzheimer's_Low dose
+83,0,16.1050032587443,Alzheimer's_Low dose
+82,1,16.4054057502943,Alzheimer's_Low dose
+79,1,14.6565893648244,Alzheimer's_Low dose
+83,0,16.2002049955766,Alzheimer's_Low dose
+80,1,14.8615016441656,Alzheimer's_Low dose
+85,1,16.4444170835241,Alzheimer's_Low dose
+83,0,14.5845027351753,Alzheimer's_Low dose
+82,1,14.7173372082523,Alzheimer's_Low dose
+82,0,11.8535959017103,Alzheimer's_Low dose
+85,0,15.2252365619148,Alzheimer's_Low dose
+84,0,15.7525174515606,Alzheimer's_Low dose
+85,0,16.8983195698919,Alzheimer's_Low dose
+82,0,16.050434827982,Alzheimer's_Low dose
+80,1,13.2273754611913,Alzheimer's_Low dose
+82,0,11.2376847036449,Alzheimer's_Low dose
+80,0,15.5960467571243,Alzheimer's_Low dose
+79,0,16.0208903802239,Alzheimer's_Low dose
+80,1,15.1776633398342,Alzheimer's_Low dose
+82,0,15.2175509223564,Alzheimer's_Low dose
+85,1,16.6048258367578,Alzheimer's_Low dose
+80,0,14.9934569341004,Alzheimer's_Low dose
+81,1,14.3010324918845,Alzheimer's_Low dose
+82,1,16.3199876528307,Alzheimer's_Low dose
+84,0,14.2772776503259,Alzheimer's_Low dose
+79,0,23.6919407873457,Alzheimer's_High Dose
+85,0,24.6622361532688,Alzheimer's_High Dose
+79,0,24.3603330720428,Alzheimer's_High Dose
+81,0,23.2059763438332,Alzheimer's_High Dose
+80,0,22.5947077300197,Alzheimer's_High Dose
+84,0,22.5381957568855,Alzheimer's_High Dose
+85,0,22.5304554122677,Alzheimer's_High Dose
+79,1,22.7907260977064,Alzheimer's_High Dose
+85,1,22.5949657554603,Alzheimer's_High Dose
+84,0,22.6142273299102,Alzheimer's_High Dose
+85,0,24.6234777088531,Alzheimer's_High Dose
+81,1,23.4967875704956,Alzheimer's_High Dose
+83,0,22.4594994479631,Alzheimer's_High Dose
+82,1,22.7449103886938,Alzheimer's_High Dose
+79,0,24.1681746208085,Alzheimer's_High Dose
+81,1,23.6981723349166,Alzheimer's_High Dose
+83,1,22.125646080018,Alzheimer's_High Dose
+82,0,22.075898811845,Alzheimer's_High Dose
+82,1,23.8168577464054,Alzheimer's_High Dose
+85,1,20.1435783154919,Alzheimer's_High Dose
+84,1,24.5181423081587,Alzheimer's_High Dose
+82,0,22.0474794356542,Alzheimer's_High Dose
+79,1,20.9370394175251,Alzheimer's_High Dose
+80,1,23.7036797518579,Alzheimer's_High Dose
+81,1,23.2207526718932,Alzheimer's_High Dose
+85,0,21.7754526003736,Alzheimer's_High Dose
+81,0,23.5285481767334,Alzheimer's_High Dose
+83,1,22.8067965813432,Alzheimer's_High Dose
+79,0,23.9102025999734,Alzheimer's_High Dose
+81,1,23.9974248306855,Alzheimer's_High Dose
+84,1,21.9506528272415,Alzheimer's_High Dose
+81,1,24.1246163982201,Alzheimer's_High Dose
+82,0,22.5020154257603,Alzheimer's_High Dose
+79,0,22.0254047149491,Alzheimer's_High Dose
+83,1,22.7346441142562,Alzheimer's_High Dose
+79,0,19.9851685854767,Alzheimer's_High Dose
+83,1,24.4865869647133,Alzheimer's_High Dose
+79,0,22.8131386640706,Alzheimer's_High Dose
+81,1,23.1131992298862,Alzheimer's_High Dose
+81,1,22.159878397199,Alzheimer's_High Dose
+79,0,23.9646926721858,Alzheimer's_High Dose
+80,0,22.9887402597278,Alzheimer's_High Dose
+85,1,22.7916354105696,Alzheimer's_High Dose
+80,0,24.0413327350697,Alzheimer's_High Dose
+84,0,25.2488739004596,Alzheimer's_High Dose
+85,1,24.2734813800062,Alzheimer's_High Dose
+82,1,22.4971790137055,Alzheimer's_High Dose
+83,0,22.3154143889808,Alzheimer's_High Dose
+80,1,22.5535626382008,Alzheimer's_High Dose
+84,1,22.5033468588792,Alzheimer's_High Dose
+85,1,24.6337581968484,Alzheimer's_High Dose
+84,1,21.098589829238,Alzheimer's_High Dose
+81,1,22.2466699931949,Alzheimer's_High Dose
+84,1,22.5481477707695,Alzheimer's_High Dose
+84,0,21.8147855214184,Alzheimer's_High Dose
+81,1,21.797092208659,Alzheimer's_High Dose
+79,0,23.7460925747776,Alzheimer's_High Dose
+83,1,22.360580331915,Alzheimer's_High Dose
+82,0,22.6790390653848,Alzheimer's_High Dose
+85,1,21.8840391074842,Alzheimer's_High Dose
+84,0,21.9379188030228,Alzheimer's_High Dose
+84,0,24.0960537539551,Alzheimer's_High Dose
+85,1,20.3405333993061,Alzheimer's_High Dose
+83,0,22.1309257274145,Alzheimer's_High Dose
+85,0,24.6071974928553,Alzheimer's_High Dose
+80,0,24.9885851336778,Alzheimer's_High Dose
+80,1,21.4208779516397,Alzheimer's_High Dose
+84,1,22.3772546987691,Alzheimer's_High Dose
+84,0,23.4319276840837,Alzheimer's_High Dose
+83,0,24.9388368655117,Alzheimer's_High Dose
+79,1,23.3499876539357,Alzheimer's_High Dose
+83,0,21.2913624667494,Alzheimer's_High Dose
+84,0,22.6713013025614,Alzheimer's_High Dose
+82,0,21.2393218766778,Alzheimer's_High Dose
+80,1,22.9986238343918,Alzheimer's_High Dose
+84,0,22.8075653604268,Alzheimer's_High Dose
+84,1,21.6333610919074,Alzheimer's_High Dose
+81,1,25.6258445631889,Alzheimer's_High Dose
+81,1,22.9565028249642,Alzheimer's_High Dose
+84,1,23.9894945277094,Alzheimer's_High Dose
+83,1,22.3224023225551,Alzheimer's_High Dose
+82,1,21.5562032854397,Alzheimer's_High Dose
+79,0,22.3762305005565,Alzheimer's_High Dose
+85,0,23.3836926528943,Alzheimer's_High Dose
+80,1,21.9166913214092,Alzheimer's_High Dose
+84,0,24.3922148088417,Alzheimer's_High Dose
+85,0,24.1704851301596,Alzheimer's_High Dose
+84,0,24.3854738859395,Alzheimer's_High Dose
+81,0,21.7397392700274,Alzheimer's_High Dose
+81,0,23.5727951614024,Alzheimer's_High Dose
+82,0,23.2748230661191,Alzheimer's_High Dose
+80,1,22.9889278683244,Alzheimer's_High Dose
+79,1,24.3644634774984,Alzheimer's_High Dose
+84,1,23.7178934863864,Alzheimer's_High Dose
+79,1,22.6671253989434,Alzheimer's_High Dose
+85,1,24.1331429686891,Alzheimer's_High Dose
+84,0,24.1939545348794,Alzheimer's_High Dose
+82,1,21.7390928013885,Alzheimer's_High Dose
+79,1,24.9244142482106,Alzheimer's_High Dose
+82,1,21.9376497548655,Alzheimer's_High Dose

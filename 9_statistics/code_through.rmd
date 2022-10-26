@@ -1,0 +1,307 @@
+---
+title: "A Gentle Guide to Tidy Statistics in R"
+date: 03-16-2018
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+### Load packages
+Using the `library` function load your packages eg `library(package_name)`
+
+```{r, message=F, warning=FALSE, echo = T}
+# Load libraries
+library(tidyverse) # plotting, cleaning, etc
+library(broom) # nice statistical outputs
+library(knitr) # some tables and R Markdown
+library(readxl) # read in Excel files
+library(here) # nice file paths
+```
+
+### Step 1 Load the data!
+
+We have to tell R what format of data we are trying to read in (.csv, .xls, .tsv, etc)
+
+```{r, eval = TRUE}
+#### Read excel file
+raw_df <- read_xlsx("ad_treatment.xlsx")
+glimpse(raw_df)
+```
+
+***
+  
+
+```{r}
+ggplot(data = raw_df, aes(x = mmse)) + 
+ geom_density(fill = "blue")
+```
+  
+***
+
+```{r}
+raw_df %>% 
+  summarize(
+    min = min(mmse), 
+    max = max(mmse)
+    )
+```
+
+```{r}
+raw_df %>% 
+  group_by(health_status) %>% 
+  summarize(
+    min = min(mmse), 
+    median = median(mmse),
+    max = max(mmse)
+    )
+```
+
+***
+  
+
+```{r, echo = T}
+raw_df %>% 
+  group_by(drug_treatment, health_status) %>% 
+  count()
+```
+
+### Data exploration of dependent variable
+
+Before running our summary statistics we can actually visualize the range, central tendency and quartiles via a geom_boxplot call.
+
+```{r, echo = T, fig.align='center'}
+ggplot(data = raw_df, # add the data
+       aes(x = drug_treatment, y = mmse, # set x, y coordinates
+           color = drug_treatment)) +    # color by treatment
+  geom_boxplot() +
+  facet_grid(~health_status) # create panes base on health status
+```
+
+***
+
+### Summary Statistics
+
+
+```{r, echo = F}
+dplyr::glimpse(raw_df)
+```
+
+***
+
+```{r, echo = F}
+sum_df <- raw_df %>% 
+            mutate(
+              sex = factor(sex,
+                              levels = c("0", "1"),
+                  labels = c("Male", "Female")),
+              drug_treatment =  factor(drug_treatment, 
+                  levels = c("Placebo", "Low dose", "High Dose")),
+              health_status = factor(health_status, 
+                  levels = c("Healthy", "Alzheimer's"))
+              )
+
+glimpse(sum_df)
+```
+
+
+
+```{r, echo = T}
+sum_df <- sum_df %>%   
+  group_by(sex, health_status, drug_treatment) %>%  
+  summarize(mmse_mean = mean(mmse),   
+            mmse_se = sd(mmse)/sqrt(n()),
+            n_samples = n()) %>%
+  ungroup() # ungrouping variable is a good habit to prevent errors
+```
+  
+***  
+  
+Now we have a nicely formatted dataframe that can be saved to Excel, or used in graphing. We need to indicate what data we are writing (sum_df) and what we want the resulting file to be named (“adx37_sum_stats.csv”).
+
+```{r, eval = F, echo = T}
+# code to save the table into a .csv Excel file
+write_csv(sum_df, "adx37_sum_stats.csv")
+```
+  
+***  
+  
+### Summary graph
+
+By calling a ggplot function we can generate a preliminary summary graph.
+
+```{r, echo = T}
+ggplot(data = sum_df, # add the data
+       aes(x = drug_treatment,  #set x, y coordinates
+           y = mmse_mean,
+           group = drug_treatment,  # group by treatment
+           color = drug_treatment)) +    # color by treatment
+  geom_point(size = 3) + 
+  facet_grid(sex~health_status) # create facets by sex and status
+```
+
+### The ANOVA finally!
+
+
+```{r}
+stats_df <- raw_df %>% # start with data
+   mutate(drug_treatment = factor(drug_treatment, 
+                                  levels = c("Placebo", "Low dose", "High Dose")),
+         sex = factor(sex, 
+                      levels = c("0", "1"),
+                      labels = c("Male", "Female")),
+         health_status = factor(health_status, 
+                                levels = c("Healthy", "Alzheimer's")))
+glimpse(stats_df)
+```
+  
+***  
+  
+
+```{r, eval = F}
+#aov(dependent_variable ~ independent variable, data = data_df)
+```
+
+```{r, eval = F}
+# this would give ONLY main effects
+ad_aov <- aov(mmse ~ sex + drug_treatment + health_status, data = stats_df)
+```
+
+```{r}
+# this gives main effects AND interactions
+ad_aov <- aov(mmse ~ sex * drug_treatment * health_status, 
+        data = stats_df)
+```
+
+
+
+
+  
+```{r}
+# look at effects and interactions
+summary(ad_aov)
+```
+
+
+```{r, eval = F}
+# this extracts ANOVA output into a nice tidy dataframe
+tidy_ad_aov <- tidy(ad_aov)
+# which we can save to Excel
+write_csv(tidy_ad_aov, "ad_aov.csv")
+```
+
+### Post-hocs
+
+```{r}
+# call and save the pair.t.test
+ad_pairwise <- pairwise.t.test(stats_df$mmse,    
+                               stats_df$sex:stats_df$drug_treatment:stats_df$health_status, 
+                               p.adj = "bonferroni")
+```
+
+
+```{r}
+# tidy the post hoc
+tidy_ad_pairwise <- broom::tidy(ad_pairwise) %>% 
+  mutate(p.value = round(p.value, 5))
+# look at the comparisons and p-values
+head(tidy_ad_pairwise)
+```
+
+  
+***  
+
+
+```{r, echo = F}
+TukeyHSD(ad_aov, which = 'sex:drug_treatment:health_status') %>% 
+  tidy() %>% 
+  head() %>% 
+  kable()
+```
+
+### Publication Graph
+
+```{r}
+tribble(
+  ~colA, ~colB,
+  "a",   1,
+  "b",   2,
+  "c",   3
+)
+```
+
+And here is our actual code for making the custom dataframe.
+
+```{r}
+# make the dataframe with specific points of interest to add *
+sig_df <- tribble(
+  ~drug_treatment, ~ health_status, ~sex, ~mmse_mean,
+  "Low dose", "Alzheimer's", "Male", 17,
+  "High Dose", "Alzheimer's", "Male", 25,
+  "Low dose", "Alzheimer's", "Female", 18, 
+  "High Dose", "Alzheimer's", "Female", 24
+  )
+# convert the variables to factors again :)
+sig_df <- sig_df %>% 
+  mutate(drug_treatment = factor(drug_treatment, 
+               levels = c("Placebo", "Low dose", "High Dose")),
+         sex = factor(sex, 
+               levels = c("Male", "Female")),
+         health_status = factor(health_status, 
+               levels = c("Healthy", "Alzheimer's")))
+```
+
+And the final graph!
+
+```{r, echo = F, fig.height=6, fig.width=7}
+g1 <- ggplot(data = sum_df, 
+       aes(x = drug_treatment, y = mmse_mean, fill = drug_treatment,  
+           group = drug_treatment)) +
+  geom_errorbar(aes(ymin = mmse_mean - mmse_se, 
+                    ymax = mmse_mean + mmse_se), width = 0.5) +
+  geom_bar(color = "black", stat = "identity", width = 0.7) +
+  
+  facet_grid(sex~health_status) +
+  theme_bw() +
+  scale_fill_manual(values = c("white", "grey", "black")) +
+  theme(legend.position = "NULL",
+        legend.title = element_blank(),
+        axis.title = element_text(size = 20),
+        legend.background = element_blank(),
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),
+        axis.text = element_text(size = 12)) +
+  geom_text(data = sig_df, label = "*", size = 8) +
+  labs(x = "\nDrug Treatment", 
+       y = "Cognitive Function (MMSE)\n",
+       caption = "\nFigure 1. Effect of novel drug treatment AD-x37 on cognitive function in healthy and demented elderly adults. \nn = 100/treatment group (total n = 600), * indicates significance at p < 0.001")
+g1
+```
+
+```{r, eval = F}
+# save the graph!
+ggsave("ad_publication_graph.png", g1, height = 7, width = 8, units = "in", dpi = 500)
+```
+
+
+```{r}
+
+library(ggridges)
+stats_df %>% 
+  group_by(sex, drug_treatment, health_status) %>% 
+  mutate(median_line = median(mmse)) %>% 
+  ggplot(aes(x = mmse, fill = drug_treatment)) +
+  geom_density() +
+    geom_vline(aes(xintercept=median_line, color = drug_treatment)) +
+  facet_grid(sex~health_status)
+```
+
+```{r}
+stats_df %>% 
+  ggplot(aes(y = drug_treatment, x = mmse, fill = drug_treatment)) +
+  geom_density_ridges(quantile_lines = TRUE, quantiles = 2) +
+  facet_grid(sex~health_status)
+```
+

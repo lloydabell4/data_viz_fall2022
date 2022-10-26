@@ -1,0 +1,105 @@
+GEOID,NAME,variable,estimate
+01,Alabama,income,24476
+01,Alabama,rent,747
+02,Alaska,income,32940
+02,Alaska,rent,1200
+04,Arizona,income,27517
+04,Arizona,rent,972
+05,Arkansas,income,23789
+05,Arkansas,rent,709
+06,California,income,29454
+06,California,rent,1358
+08,Colorado,income,32401
+08,Colorado,rent,1125
+09,Connecticut,income,35326
+09,Connecticut,rent,1123
+10,Delaware,income,31560
+10,Delaware,rent,1076
+11,District of Columbia,income,43198
+11,District of Columbia,rent,1424
+12,Florida,income,25952
+12,Florida,rent,1077
+13,Georgia,income,27024
+13,Georgia,rent,927
+15,Hawaii,income,32453
+15,Hawaii,rent,1507
+16,Idaho,income,25298
+16,Idaho,rent,792
+17,Illinois,income,30684
+17,Illinois,rent,952
+18,Indiana,income,27247
+18,Indiana,rent,782
+19,Iowa,income,30002
+19,Iowa,rent,740
+20,Kansas,income,29126
+20,Kansas,rent,801
+21,Kentucky,income,24702
+21,Kentucky,rent,713
+22,Louisiana,income,25086
+22,Louisiana,rent,825
+23,Maine,income,26841
+23,Maine,rent,808
+24,Maryland,income,37147
+24,Maryland,rent,1311
+25,Massachusetts,income,34498
+25,Massachusetts,rent,1173
+26,Michigan,income,26987
+26,Michigan,rent,824
+27,Minnesota,income,32734
+27,Minnesota,rent,906
+28,Mississippi,income,22766
+28,Mississippi,rent,740
+29,Missouri,income,26999
+29,Missouri,rent,784
+30,Montana,income,26249
+30,Montana,rent,751
+31,Nebraska,income,30020
+31,Nebraska,rent,773
+32,Nevada,income,29019
+32,Nevada,rent,1017
+33,New Hampshire,income,33172
+33,New Hampshire,rent,1052
+34,New Jersey,income,35075
+34,New Jersey,rent,1249
+35,New Mexico,income,24457
+35,New Mexico,rent,809
+36,New York,income,31057
+36,New York,rent,1194
+37,North Carolina,income,26482
+37,North Carolina,rent,844
+38,North Dakota,income,32336
+38,North Dakota,rent,775
+39,Ohio,income,27435
+39,Ohio,rent,764
+40,Oklahoma,income,26207
+40,Oklahoma,rent,766
+41,Oregon,income,27389
+41,Oregon,rent,988
+42,Pennsylvania,income,28923
+42,Pennsylvania,rent,885
+44,Rhode Island,income,30210
+44,Rhode Island,rent,957
+45,South Carolina,income,25454
+45,South Carolina,rent,836
+46,South Dakota,income,28821
+46,South Dakota,rent,696
+47,Tennessee,income,25453
+47,Tennessee,rent,808
+48,Texas,income,28063
+48,Texas,rent,952
+49,Utah,income,27928
+49,Utah,rent,948
+50,Vermont,income,29351
+50,Vermont,rent,945
+51,Virginia,income,32545
+51,Virginia,rent,1166
+53,Washington,income,32318
+53,Washington,rent,1120
+54,West Virginia,income,23707
+54,West Virginia,rent,681
+55,Wisconsin,income,29868
+55,Wisconsin,rent,813
+56,Wyoming,income,30854
+56,Wyoming,rent,828
+72,Puerto Rico,income,NA
+72,Puerto Rico,rent,464

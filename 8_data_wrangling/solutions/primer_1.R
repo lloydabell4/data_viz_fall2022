@@ -5,8 +5,10 @@ diamonds%>%
   geom_point(aes(color =  carat > 1), 
              show.legend = "FALSE")+
   geom_smooth(method = "lm")+
-  facet_wrap(~clarity, scales = "free_y")+
+  facet_wrap(~clarity, 
+             scales = "free_y")+
   labs(title ="Carat Size and Price Are Positively Correlated for All Clarity Levels",
+       subtitle = "For Fair and Good Cuts", 
        x = "Carat",
        y = "Price ($)",
        caption = "Data from Diamonds tidyverse dataset")+
