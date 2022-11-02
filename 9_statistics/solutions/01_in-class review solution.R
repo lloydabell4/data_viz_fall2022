@@ -11,8 +11,9 @@ summary_reaction <- sleep_reaction %>%
   group_by(Group,Days)%>%
   summarise(mean_reaction <-  mean(Reaction))
 
-ggplot(sleep_reaction, aes(Days, Reaction, fill = Group))+
-  geom_boxplot()
+ggplot(sleep_reaction, aes(Days, Reaction, color = Group), alpha = .5)+
+  geom_point()+
+  geom_line(aes(group = Subject))
 
 anova_sleep_reaction <- aov(Reaction ~ Days * Group, data = sleep_reaction)
 tidy(anova_sleep_reaction)
